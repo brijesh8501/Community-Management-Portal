@@ -1,22 +1,19 @@
 const FormField = ( { field } ) => {
 
-    // Get field details from prop passed
-    const [ item, details ] = field;
-
     // Initialize empty object of field details
     let fieldDetails = {};
 
     // Validate details before creating form field
     if(
-        details.info.type &&
-        details.info.name &&
-        ( details.info.label && Object.keys(details.info.label).length > 0 ) &&
-        ( details.info.id && Object.keys(details.info.id).length > 0 )
+        field.type &&
+        field.name &&
+        ( field.label && Object.keys(field.label).length > 0 ) &&
+        ( field.id && Object.keys(field.id).length > 0 )
     ){
 
         // Assign the validated form field info
-        fieldDetails = details.info;
-
+        fieldDetails = field;
+       
         // Switch case to check field type and create field accordingly
         switch (fieldDetails.type) {
 
@@ -26,7 +23,7 @@ const FormField = ( { field } ) => {
                 return (
                     <>
                         <label 
-                            htmlFor={item} 
+                            htmlFor={fieldDetails.name} 
                             className="form-label"
                         >
                             {fieldDetails.label.en.text}
@@ -46,7 +43,7 @@ const FormField = ( { field } ) => {
                 return (
                     <>
                         <label 
-                            htmlFor={item} 
+                            htmlFor={fieldDetails.name} 
                             className="form-label"
                         >
                             {fieldDetails.label.en.text}

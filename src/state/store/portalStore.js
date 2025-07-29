@@ -18,14 +18,15 @@ Structure:
 
 const initialPortalState = {
     login: {
-        field:{
-            email: {
-                info: {
+        formLayout: [
+            [
+                {
                     type: "email",
                     name: "email",
                     id: {
                         field_1: "email"
                     },
+                    class: "col-12",
                     label: {
                         en: {
                             text: "Email Address",
@@ -39,17 +40,18 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: ["email"]
-                    }
-                },
-                data: ""
-            },
-            password: {
-                info: {
+                    },
+                    data: ""
+                } 
+            ],
+            [
+                {
                     type: "password",
                     name: "password",
                     id: {
                         field_1: "password"
                     },
+                    class: "col-12",
                     label: {
                         en: {
                             text: "Password",
@@ -63,11 +65,11 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: null
-                    }
-                },
-                data: ""
-            }
-        },
+                    },
+                    data: ""
+                }
+            ]
+        ],
         button: {
             submit: {
                 name: "login",
@@ -79,14 +81,15 @@ const initialPortalState = {
 
     },
     registerNewAccount: {
-        field:{
-            firstname: {
-                info: {
+        formLayout:[
+            [ 
+                {
                     type: "text",
                     name: "firstname",
                     id: {
                         field_1: "firstname"
                     },
+                    class: "col-12 col-md-6",
                     label: {
                         en: {
                             text: "Name",
@@ -100,17 +103,16 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: ["email"]
-                    }
-                },
-                data: ""
-            },
-            lastname: {
-                info: {
+                    },
+                    data: ""
+                }, 
+                {
                     type: "text",
                     name: "lastname",
                     id: {
                         field_1: "lastname"
                     },
+                    class: "col-12 col-md-6",
                     label: {
                         en: {
                             text: "Surname",
@@ -124,17 +126,18 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: ["email"]
-                    }
-                },
-                data: ""
-            },
-            birthyear: {
-                info: {
+                    },
+                    data: ""
+                } 
+            ],
+            [ 
+                {
                     type: "select",
                     name: "birthyear",
                     id: {
                         field_1: "birthyear"
                     },
+                    class: "col-12 col-md-6",
                     label: {
                         en: {
                             text: "Birth year",
@@ -148,17 +151,16 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: ["digitOnly"]
-                    }
+                    },
+                    data: ""
                 },
-                data: ""
-            },
-            gender: {
-                info: {
+                {
                     type: "select",
                     name: "gender",
                     id: {
                         field_1: "gender"
                     },
+                    class: "col-12 col-md-6",
                     label: {
                         en: {
                             text: "Gender",
@@ -172,17 +174,18 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: ["digitOnly"]
-                    }
-                },
-                data: ""
-            },
-            email: {
-                info: {
+                    },
+                    data: ""
+                }
+            ],
+            [ 
+                { 
                     type: "text",
                     name: "email",
                     id: {
                         field_1: "email"
                     },
+                    class: "col-12",
                     label: {
                         en: {
                             text: "Email Address",
@@ -196,17 +199,18 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: ["email"]
-                    }
-                },
-                data: ""
-            },
-            contactnumber: {
-                info: {
+                    },
+                    data: ""
+                } 
+            ],
+            [ 
+                { 
                     type: "text",
                     name: "contactnumber",
                     id: {
                         field_1: "contactnumber"
                     },
+                    class: "col-12",
                     label: {
                         en: {
                             text: "Contact number",
@@ -220,17 +224,18 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: ["digitOnly"]
-                    }
-                },
-                data: ""
-            },
-            password: {
-                info: {
+                    },
+                    data: ""
+                } 
+            ],
+            [ 
+                { 
                     type: "password",
                     name: "password",
                     id: {
                         field_1: "password"
                     },
+                    class: "col-12",
                     label: {
                         en: {
                             text: "Password",
@@ -244,11 +249,11 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: null
-                    }
-                },
-                data: ""
-            }
-        },
+                    },
+                    data: ""
+                } 
+            ]
+        ],
         button: {
             submit: {
                 name: "signin",
@@ -256,86 +261,18 @@ const initialPortalState = {
                 class: "btn-primary btn-fill",
                 text: "Sign Up"
             }
-        },
-        formLayout:[
-            [ 
-                { 
-                    firstname: {
-                        info: {
-                            type: "text",
-                            name: "firstname",
-                            id: {
-                                field_1: "firstname"
-                            },
-                            class: "",
-                            label: {
-                                en: {
-                                    text: "Name",
-                                    placeholder: "Enter your name"
-                                },
-                                guj: {
-                                    text: "નામ",
-                                    placeholder: "તમારું નામ દાખલ કરો"
-                                }
-                            },
-                            is_validate: {
-                                flag: true,
-                                criteria: ["email"]
-                            },
-                            data: ""
-                        }
-                    }
-                }, 
-                {
-                    lastname: {
-                    info: {
-                        type: "text",
-                        name: "lastname",
-                        id: {
-                            field_1: "lastname"
-                        },
-                        label: {
-                            en: {
-                                text: "Surname",
-                                placeholder: "Enter your surname"
-                            },
-                            guj: {
-                                text: "અટક",
-                                placeholder: "તમારી અટક દાખલ કરો"
-                            }
-                        },
-                        is_validate: {
-                            flag: true,
-                            criteria: ["email"]
-                        }
-                    },
-                    data: ""
-                } 
-            ],
-            [ 
-                { birthyear: "col-12 col-md-6" }, 
-                { gender: "col-12 col-md-6" } 
-            ],
-            [ 
-                { email: "col-12" } 
-            ],
-            [ 
-                { contactnumber: "col-12" } 
-            ],
-            [ 
-                { password: "col-12" } 
-            ]
-        ],
+        }
     },
     forgotPassword: {
-        field:{
-            email: {
-                info: {
+        formLayout: [
+            [
+                {
                     type: "email",
                     name: "email",
                     id: {
                         field_1: "email"
                     },
+                    class: "col-12",
                     label: {
                         en: {
                             text: "Email Address",
@@ -349,11 +286,11 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: ["email"]
-                    }
-                },
-                data: ""
-            }
-        },
+                    },
+                    data: ""
+                }    
+            ]
+        ],
         button: {
             submit: {
                 name: "forgotpassword",
@@ -364,14 +301,15 @@ const initialPortalState = {
         }
     },
     changePassword: {
-        field:{
-            email: {
-                info: {
+        formLayout: [
+            [
+                {
                     type: "email",
                     name: "email",
                     id: {
                         field_1: "email"
                     },
+                    class: "col-12",
                     label: {
                         en: {
                             text: "Email Address",
@@ -385,17 +323,18 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: ["email"]
-                    }
-                },
-                data: ""
-            },
-            password: {
-                info: {
+                    },
+                    data: ""
+                }
+            ],
+            [
+                {
                     type: "password",
                     name: "password",
                     id: {
                         field_1: "password"
                     },
+                    class: "col-12",
                     label: {
                         en: {
                             text: "Password",
@@ -409,17 +348,18 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: null
-                    }
-                },
-                data: ""
-            },
-            confirmpassword: {
-                info: {
+                    },
+                    data: ""
+                }
+            ],
+            [
+                {
                     type: "password",
                     name: "confirmpassword",
                     id: {
                         field_1: "confirmpassword"
                     },
+                    class: "col-12",
                     label: {
                         en: {
                             text: "Confirm password",
@@ -433,11 +373,11 @@ const initialPortalState = {
                     is_validate: {
                         flag: true,
                         criteria: null
-                    }
-                },
-                data: ""
-            }
-        },
+                    },
+                    data: ""
+                }
+            ]
+        ],
         button: {
             submit: {
                 name: "changepassword",

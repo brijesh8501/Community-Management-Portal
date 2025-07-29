@@ -7,8 +7,14 @@ const ForgotPassword = () => {
 
     // State
     const { state, dispatch } = useGlobalContext();
+
+    // Get state of forgot password and current portal
     const { forgotPassword, currentPortal } = state; 
-    console.log(forgotPassword)
+    
+    // Form Information
+    const formLayout = (forgotPassword)? forgotPassword.formLayout : "";
+  
+
     return (
         
         <section className="peacock-gradient-bg" id="section-wrapper">
@@ -16,22 +22,29 @@ const ForgotPassword = () => {
                 <div className="d-flex flex-column gap-5 justify-content-center align-items-center flex-fill">
                     <img src={`${process.env.PUBLIC_URL}/favicon.ico`} alt="Logo" />
                     <div className="silver-light-bg p-5 max-width-550px">
-                        <div className="alert alert-info my-4">
+                        <div className="alert alert-info mt-4">
                             <p className="mb-0">Fields marked with an asterisk (<span className="text-danger">*</span>) are required.</p>
                         </div>
                         <form method="POST">
                             {
-                                (forgotPassword) &&
-                                    Object.entries(forgotPassword.field).map(( item, i ) => {
-                                        // Create form field
+                                (formLayout && formLayout.length > 0) &&
+                                    formLayout.map( (item, i) => {
+                                        // Form design layout
                                         return (
-                                           <div className={ (i > 0)? "mt-4" : ""} key={i}>
-                                                <FormField field={item} />
-                                           </div>
+                                            <div className="row">
+                                                { 
+                                                    item.map(   ( innerItem, innerI) => 
+                                                    {
+                                                        return (<div className={`${innerItem.class} mt-4`} key={innerI}>
+                                                                <FormField field={innerItem} />
+                                                        </div>)
+                                                    })
+                                                }
+                                            </div>
                                         )
-                                    })
-                            }
+                                    } )
 
+                            }
                             <div className="d-flex justify-content-start align-items-center gap-3 mt-4">
                                 {
                                     (forgotPassword && Object.keys(forgotPassword.button).length > 0) &&
