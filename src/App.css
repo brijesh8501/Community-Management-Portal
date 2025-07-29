@@ -1,38 +1,365 @@
-.App {
-  text-align: center;
+/* ********** App Level Layout Style ********** */
+:root{
+    --peacock-dark-color: #0f1e64;
+    --peacock-dark-color-rgb: 15,30,100;
+    --peacock-dark-color-rgb-opacity: 0.5;
+
+    --peacock-median-color: #236B88;
+    --peacock-median-color-rgb: 35, 107, 136;
+    --peacock-median-color-rgb-opacity: 0.5;
+
+    --peacock-light-color: #37b8ab;
+    --peacock-light-color-rgb: 55,184,171;
+    --peacock-light-color-rgb-opacity: 0.5;
+
+    --orange-color: #FBB340;
+    --orange-color-rgb: 251,179,64;
+    --orange-color-rgb-opacity: 0.5;
+
+    --yellow-color: #F9E135;
+    --yellow-color-rgb: 249,225,53;
+    --yellow-color-rgb-opacity: 0.5;
+
+    --danger-color: #842029;
+
+    --silver-color: rgba(12, 18, 28, 0.12);
+    --silver-light-color: rgb(243, 244, 245);
+
+    --grey-color: #ced4da;
+    --grey-color-rgb: 206,212,218;
+    --grey-color-rgb-opacity: 0.5;
+
+    --body-wrapper: 6rem;
+    --body-part-spacer: 4.5rem;
+    --body-part-inner-spacer: 4.5rem; 
+    
+    --body-md-wrapper: 5rem;
+    --body-part-md-spacer: 4rem;
+    --body-part-inner-md-spacer: 4rem; 
+
+    --body-sm-wrapper: 4.5rem;
+    --body-part-sm-spacer: 3.5rem;
+    --body-part-inner-sm-spacer: 3.5rem; 
+
+    --body-xs-wrapper: 4.5rem;
+    --body-part-xs-spacer: 3.5rem;
+    --body-part-inner-xs-spacer: 3.5rem; 
+    
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/Roboto-Bold.woff2") format("woff2"),
+        url("../public/fonts/Roboto-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/Roboto-Black.woff2") format("woff2"),
+        url("../public/fonts/Roboto-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/Roboto-BlackItalic.woff2") format("woff2"),
+        url("../public/fonts/Roboto-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/Roboto-Medium.woff2") format("woff2"),
+        url("../public/fonts/Roboto-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/Roboto-Thin.woff2") format("woff2"),
+        url("../public/fonts/Roboto-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/Roboto-Italic.woff2") format("woff2"),
+        url("../public/fonts/Roboto-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/Roboto-MediumItalic.woff2") format("woff2"),
+        url("../public/fonts/Roboto-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/Roboto-Light.woff2") format("woff2"),
+        url("../public/fonts/Roboto-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/Roboto-LightItalic.woff2") format("woff2"),
+        url("../public/fonts/Roboto-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/Roboto-Regular.woff2") format("woff2"),
+        url("../public/fonts/Roboto-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+        src: url("../public/fonts/Roboto-ThinItalic.woff2") format("woff2"),
+        url("../public/fonts/Roboto-ThinItalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../public/fonts/Roboto-BoldItalic.woff2") format("woff2"),
+        url("../public/fonts/Roboto-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+.font-roboto{
+    font-family: "Roboto" !important;
+    letter-spacing: var(--roboto-letter-spacing);
+}
+.fs-10{
+    font-size: 10px;
+}
+.fs-12{
+    font-size: 12px;
+}
+.fs-14{
+    font-size: 14px;
+}
+.fw-500{
+    font-weight: 500 !important;
+}
+.fw-medium{
+    font-weight: 700 !important;
+}
+.letter-spacing-normal{
+    letter-spacing: normal !important;
+}
+.primary-color{
+    color: var(--peacock-dark-color) !important;
+}
+.primary-bg{
+    background-color: var(--peacock-dark-color) !important;
+}
+.median-color{
+    color: var(--peacock-median-color) !important;
+}
+.median-bg{
+    background-color: var(--peacock-median-color) !important;
+}
+.secondary-color{
+    color: var(--peacock-light-color) !important;
+}
+.secondary-bg{
+    background-color: var(--peacock-light-color) !important;
+}
+.orange-color{
+    color: var(--orange-color) !important;
+}
+.orange-bg{
+    background-color: var(--orange-color) !important;
+}
+.yellow-color{
+    color: var(--yellow-color) !important;
+}
+.yellow-bg{
+    background-color: var(--yellow-color) !important;
+}
+.silver-light-color{
+    color: var(--silver-light-color) !important;
+}
+.silver-light-bg{
+    background-color: var(--silver-light-color) !important;
+}
+.peacock-gradient {
+    background: linear-gradient(90deg, var(--peacock-dark-color), var(--peacock-light-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.peacock-gradient-bg{
+    background: linear-gradient(to bottom, var(--peacock-dark-color), var(--peacock-light-color));
+}
+.peacock-median-gradient-bottom-bg{
+    background: linear-gradient(
+        to right, 
+        var(--peacock-dark-color) 0%,
+        var(--peacock-dark-color) 3%,
+        var(--peacock-median-color) 100%
+    );
+}
+body{
+    font-family: "Roboto";
+}
+.body-wrapper{
+    padding-top: var(--body-wrapper);
+    padding-bottom: var(--body-wrapper);
+}
+.body-part-spacer{
+    margin-top: var(--body-part-spacer);
+}
+.body-part-inner-spacer{
+    padding-top: var(--body-part-inner-spacer);
+    padding-bottom: var(--body-part-inner-spacer);
+}
+.btn-primary{
+    min-width: 150px;
+    background-color: inherit;
+    color: var(--orange-color);
+    border: 1px solid var(--orange-color);
+    border-radius: 0;
+    font-weight: 700 !important;
+    padding: 0.75rem 1.5rem;
+    text-transform: uppercase;
+}
+.btn-primary.btn-fill{
+    min-width: 150px;
+    background-color: var(--orange-color);
+    color: var(--peacock-dark-color);
+    border: 1px solid var(--orange-color);
+}
+.btn-primary.btn-peacock-fill{
+    min-width: 150px;
+    background: linear-gradient(90deg, var(--peacock-dark-color), var(--peacock-median-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: var(--peacock-dark-color);
+    border: 1px solid var(--peacock-dark-color);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active{
+    color: var(--peacock-dark-color) !important;
+    border-color: var(--orange-color) !important;
+    background-color: var(--orange-color) !important;
+}
+.btn-primary.btn-fill:hover,
+.btn-primary.btn-fill:focus,
+.btn-primary.btn-fill:active{
+    color: var(--peacock-dark-color) !important;
+    border-color: var(--orange-color) !important;
+    background-color: rgba( var(--orange-color-rgb), 0.75  ) !important;
+}
+.btn-primary.btn-peacock-fill:hover,
+.btn-primary.btn-peacock-fill:focus,
+.btn-primary.btn-peacock-fill:active{
+    color: var(--orange-color) !important;
+    border-color: var(--peacock-dark-color) !important;
+    background: linear-gradient(to right, rgba(var(--peacock-dark-color-rgb), 1) , rgba(var(--peacock-median-color-rgb), 1) ) !important;
+    -webkit-text-fill-color: unset;
+}
+.btn-secondary{
+    min-width: 150px;
+    background-color: inherit;
+    color: black;
+    border: 1px solid var(--grey-color);
+    border-radius: 0;
+    font-weight: 700 !important;
+    padding: 0.75rem 1.5rem;
+    text-transform: uppercase;
+}
+.btn-secondary.btn-fill{
+    min-width: 150px;
+    background-color: var(--grey-color);
+    color: black;
+    border: 1px solid var(--grey-color);
+}
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active{
+    color: black !important;
+    border-color: var(--grey-color) !important;
+    background-color: var(--grey-color) !important;
+}
+.btn-secondary.btn-fill:hover,
+.btn-secondary.btn-fill:focus,
+.btn-secondary.btn-fill:active{
+    color: black !important;
+    border-color: var(--grey-color) !important;
+    background-color: rgba( var(--grey-color-rgb), 0.75  ) !important;
+}
+.form-control,
+.form-select{
+    border-radius: 0;
+    padding: 0.75rem 1.5rem;
+}
+.form-check{
+    min-height: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: start;
+    align-items: center;
+}
+.form-check-input[type=checkbox]{
+    border-radius: 0;
+}
+.form-check-input{
+    width: 1.5em;
+    height: 1.5em;
+}
+.form-check-input:checked{
+    background-color: var(--peacock-median-color);
+    border-color: var(--peacock-median-color);
+}
+input[readonly],
+input[readonly]:hover,
+input[readonly]:active,
+input[readonly]:focus{
+    background-color: var(--silver-color);
+    cursor: no-drop;
+}
+.navbar{
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+a.link{
+    color: black;
+}
+.alert.alert-info{
+    
+    border: 0;
+    border-radius: 0;
+    background-color: white;
+    border-left: 5px solid var(--orange-color);
+
 }

@@ -1,0 +1,17 @@
+# Allow access from your website and localhost
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Allow access from your website
+    #RewriteCond %{HTTP_REFERER} ^https?://(www\.)?binalahir\.com [NC,OR]
+
+    # Allow access from localhost
+    #RewriteCond %{HTTP_REFERER} ^http://localhost [NC,OR]
+    #RewriteCond %{HTTP_REFERER} ^http://127\.0\.0\.1 [NC]
+
+    # Allow access
+    #RewriteRule .* - [L]
+
+    # Deny access otherwise
+    #RewriteRule .* - [F]
+</IfModule>
