@@ -1,4 +1,4 @@
-import { useGlobalContext } from "../../../../state/globalContext";
+import { useGlobalContext } from "../../state/globalContext";
 import Header from '../../layout/header';
 import Footer from '../../layout/footer';
 

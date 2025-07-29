@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { Routes, Route } from "react-router-dom";
-import { useGlobalContext } from '../../state/globalContext';
+import { useGlobalContext } from './state/globalContext';
 import Home from './pages/home';
 
 
-const Website = () => {
+const Navigate = () => {
 
     // State dispatch
     const { dispatch } = useGlobalContext();
@@ -24,7 +24,7 @@ const Website = () => {
                 try {
                     
                     // Load website state
-                    const { default: websiteState } = await import('../../state/store/websiteStore'); // Adjust path
+                    const { default: websiteState } = await import('./state/store'); // Adjust path
                     dispatch({ type: 'INITIALIZE_WEBSITE_STATE', payload: websiteState });
 
                 } catch (error) {
@@ -51,4 +51,4 @@ const Website = () => {
 
 }
 
-export default Website;
+export default Navigate;

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../../../../../state/globalContext";
+import { useGlobalContext } from "../../../state/globalContext";
 import '../../../layout/style/main.css';
-import FormField from "../../../../components/form/formField";
+import FormField from "../../../../../components/form/formField";
 
 const RegisterNewAccount = () => {
 
@@ -31,7 +31,7 @@ const RegisterNewAccount = () => {
                                     formLayout.map( (item, i) => {
                                         // Form design layout
                                         return (
-                                            <div className="row">
+                                            <div className="row" key={i}>
                                                 { 
                                                     item.map(   ( innerItem, innerI) => 
                                                     {

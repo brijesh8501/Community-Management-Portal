@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Routes, Route } from "react-router-dom";
-import { useGlobalContext } from '../../state/globalContext';
+import { useGlobalContext } from './state/globalContext';
 import Login from './pages/account/login';
 import RegisterNewAccount from './pages/account/registerNewAccount';
 import ChangePassword from './pages/account/changePassword';
@@ -8,7 +8,7 @@ import ForgotPassword from './pages/account/forgotPassword';
 import Dashboard from './pages/dashboard';
 
 
-const Portal = () => {
+const Navigate = () => {
 
     // State dispatch
     const { dispatch } = useGlobalContext();
@@ -26,7 +26,7 @@ const Portal = () => {
                 try {
 
                     // Load portal state
-                    const { default: portalState } = await import('../../state/store/portalStore'); // Adjust path
+                    const { default: portalState } = await import('./state/store'); // Adjust path
                     dispatch({ type: 'INITIALIZE_PORTAL_STATE', payload: portalState });
                     
                 } catch (error) {
@@ -57,4 +57,4 @@ const Portal = () => {
 
 }
 
-export default Portal;
+export default Navigate;
