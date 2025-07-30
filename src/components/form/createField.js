@@ -1,4 +1,4 @@
-const FormField = ( { field } ) => {
+const CreateField = ( { field } ) => {
 
     // Initialize empty object of field details
     let fieldDetails = {};
@@ -17,7 +17,7 @@ const FormField = ( { field } ) => {
         // Switch case to check field type and create field accordingly
         switch (fieldDetails.type) {
 
-            case 'select':
+            case 'dropdown':
 
                 // Select dropdown
                 return (
@@ -26,7 +26,7 @@ const FormField = ( { field } ) => {
                             htmlFor={fieldDetails.name} 
                             className="form-label"
                         >
-                            {fieldDetails.label.en.text}
+                            {fieldDetails.label.en.text} / {fieldDetails.label.guj.text} 
                         </label>
                         <input 
                             type={fieldDetails.subType} 
@@ -43,7 +43,7 @@ const FormField = ( { field } ) => {
                 let inputGroupField = [];
 
                 // Input group text to be added in input group field
-                const inputGroupItem = <span className="input-group-text">{fieldDetails.inputGroupInfo.item}</span>;
+                const inputGroupItem = <span className="input-group-text" key="addon">{fieldDetails.inputGroupInfo.item}</span>;
                 
                 // Add input field to the initialized empty array
                 inputGroupField.push(
@@ -52,6 +52,7 @@ const FormField = ( { field } ) => {
                         className="form-control" 
                         name={fieldDetails.name} 
                         id={fieldDetails.id.field_1}
+                        key="input"
                     />
                 );
 
@@ -63,7 +64,7 @@ const FormField = ( { field } ) => {
                     fieldDetails.inputGroupInfo &&
                     fieldDetails.inputGroupInfo.item &&
                     fieldDetails.inputGroupInfo.position &&
-                    Object.entries(fieldDetails.inputGroupInfo).length == 2
+                    Object.entries(fieldDetails.inputGroupInfo).length == 3
                 )&&( 
                         (fieldDetails.inputGroupInfo.position === "start")?
                             inputGroupField.unshift(inputGroupItem)
@@ -78,7 +79,7 @@ const FormField = ( { field } ) => {
                             htmlFor={fieldDetails.name} 
                             className="form-label"
                         >
-                            {fieldDetails.label.en.text}
+                            {fieldDetails.label.en.text} / {fieldDetails.label.guj.text} 
                         </label>
                         <div className="input-group">
                             {inputGroupField}
@@ -95,7 +96,7 @@ const FormField = ( { field } ) => {
                             htmlFor={fieldDetails.name} 
                             className="form-label"
                         >
-                            {fieldDetails.label.en.text}
+                            {fieldDetails.label.en.text} / {fieldDetails.label.guj.text} 
                         </label>
                         <input 
                             type={fieldDetails.subType} 
@@ -116,4 +117,4 @@ const FormField = ( { field } ) => {
 
 }
 
-export default FormField;
+export default CreateField;

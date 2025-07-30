@@ -48,6 +48,7 @@ const Navigate = () => {
     return(
         <Routes>
             <Route path="/" element={<Login />} />
+            <Route path="/login/" element={<Login />} />
             <Route path="/register/" element={<RegisterNewAccount />} />
             <Route path="/change-password/" element={<ChangePassword />} />
             <Route path="/forgot-password/" element={<ForgotPassword />} />

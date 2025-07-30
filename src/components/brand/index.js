@@ -1,7 +1,5 @@
-import React from 'react';
-
-
-const BrandInformation = {
+// Brand configuration of application
+export default {
 
     logo: {
         logo_1: {
@@ -16,6 +14,14 @@ const BrandInformation = {
         },
     },
     tagline: "Empowering Community Connections",
+    message: {
+        form: {
+            fieldRequired: {
+                en: () => <>Fields marked with an asterisk ({<span className="text-danger">*</span>}) are required.</>,
+                guj: () => <>ફૂદડી ({<span className="text-danger">*</span>}) થી ચિહ્નિત થયેલ માહિતી જરૂરી છે.</>
+            } 
+        }
+    },
     socialLink: {
         facebook: { 
             name: "Facebook",
@@ -48,6 +54,5 @@ const BrandInformation = {
         secondary: "240, 78, 35",
         silver: ""
     }
+    
 }
-
-export default BrandInformation;

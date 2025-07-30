@@ -1,4 +1,4 @@
-import '../style/main.css';
+import '../../embed/style/main.css';
 
 const Header = () => {
 

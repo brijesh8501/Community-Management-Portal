@@ -19,7 +19,7 @@ function App() {
     // Suspense is used to show skeleton animation while the app is loading
     // Routes is used to define the routes for the app
     // Route is used to define the route for the app
-    <Suspense fallback={<div class="skeleton-wrapper vw-100 vh-100"><div class="skeleton-image mh-100"></div></div>}>
+    <Suspense fallback={<div className="skeleton-wrapper vw-100 vh-100"><div className="skeleton-image mh-100"></div></div>}>
       <RequireTrailingSlashURL>
         <Routes>
           <Route path="/" element={<Website />} />

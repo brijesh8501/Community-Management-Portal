@@ -1,18 +1,30 @@
+// Portal css
+import "../../../embed/style/main.css";
+// React Files
 import { Link } from "react-router-dom";
+// Brand configuration
+import brandConfiguration from "../../../../../components/brand";
+// Change password web page configuration 
+import { pageFormLayout, pageFormButton } from "../../../embed/pageConfiguration/account/changePassword";
+// Login web page linkage title
+import { pageURL as loginSlug, pageLinkageTitle as loginPageLinkageTitle } from "../../../embed/pageConfiguration/account/login";
+// Forgot password web page linkage title
+import { pageURL as forgotPasswordSlug, pageLinkageTitle as forgotPasswordPageLinkageTitle } from "../../../embed/pageConfiguration/account/forgotPassword";
+// State global context call out
 import { useGlobalContext } from "../../../state/globalContext";
-import '../../../layout/style/main.css';
-import FormField from "../../../../../components/form/formField";
+// Create form field component
+import CreateField from "../../../../../components/form/createField";
 
 const ChangePassword = () => {
+
+    // Brand information
+    const { message } = brandConfiguration;
 
     // State
     const { state, dispatch } = useGlobalContext();
 
     // Get state of change password and current portal
     const { changePassword, currentPortal } = state; 
-    
-    // Form Information
-    const formLayout = (changePassword)? changePassword.formLayout : "";
 
     return (
         
@@ -20,14 +32,15 @@ const ChangePassword = () => {
             <div className="container min-vh-100 d-flex flex-column justify-content-between align-items-stretch" id="section-inner-wrapper">
                 <div className="d-flex flex-column gap-5 justify-content-center align-items-center flex-fill">
                     <img src={`${process.env.PUBLIC_URL}/favicon.ico`} alt="Logo" />
-                    <div className="silver-light-bg p-5 max-width-550px">
-                        <div className="alert alert-info mt-4">
-                            <p className="mb-0">Fields marked with an asterisk (<span className="text-danger">*</span>) are required.</p>
+                    <div className="d-flex flex-column gap-4 bg-white p-5 max-width-550px">
+                        <div className="alert alert-info">
+                            <p className="mb-1">{message.form.fieldRequired.en()}</p>
+                            <p className="mb-0">{message.form.fieldRequired.guj()}</p>
                         </div>
                         <form method="POST">
                             {
-                                (formLayout && formLayout.length > 0) &&
-                                    formLayout.map( (item, i) => {
+                                (pageFormLayout && pageFormLayout.length > 0) &&
+                                    pageFormLayout.map( (item, i) => {
                                         // Form design layout
                                         return (
                                             <div className="row" key={i}>
@@ -35,7 +48,7 @@ const ChangePassword = () => {
                                                     item.map(   ( innerItem, innerI) => 
                                                     {
                                                         return (<div className={`${innerItem.class} mt-4`} key={innerI}>
-                                                                <FormField field={innerItem} />
+                                                                <CreateField field={innerItem} />
                                                         </div>)
                                                     })
                                                 }
@@ -45,28 +58,27 @@ const ChangePassword = () => {
 
                             }
                             <div className="d-flex justify-content-start align-items-center gap-3 mt-4">
-                                {
-                                    (changePassword && Object.keys(changePassword.button).length > 0) &&
-                                        Object.entries(changePassword.button).map(( [ key, value ], i ) => {
-                                            // Create button
-                                            return (
-                                                <button 
-                                                    className={`btn ${value.class}`}
-                                                    id={value.id}
-                                                    name={value.name}
-                                                    key={i}
-                                                >
-                                                    {value.text}
-                                                </button>
-                                            )
-                                        })
-                                }
+                            {
+                                (pageFormButton && Object.keys(pageFormButton).length > 0) &&
+                                    Object.entries(pageFormButton).map(( [ key, value ], i ) => {
+                                        // Create button
+                                        return (
+                                            <button 
+                                                className={`btn ${value.class}`}
+                                                id={value.id}
+                                                name={value.name}
+                                                key={i}
+                                            >
+                                                {`${value.label.en} / ${value.label.guj}`}
+                                            </button>
+                                        )
+                                    })
+                            }
                             </div>
                         </form>
-                        <hr className="my-4"/>
-                        <div className="d-flex gap-3 justify-content-between align-items-center flex-wrap navigate-wrapper mt-4">
-                            <Link to={`/${currentPortal}/`} className="link">Log In</Link>
-                            <Link to={`/${currentPortal}/forgot-password/`} className="link">Forgot Password?</Link>
+                        <div className="d-flex gap-3 justify-content-between align-items-center flex-wrap navigate-wrapper">
+                            <Link to={`/${currentPortal}/${loginSlug}/`} className="link">{`${loginPageLinkageTitle.en} / ${loginPageLinkageTitle.guj}`}</Link>
+                            <Link to={`/${currentPortal}/${forgotPasswordSlug}/`} className="link">{`${forgotPasswordPageLinkageTitle.en} / ${forgotPasswordPageLinkageTitle.guj}`}</Link>
                         </div>
                     </div> 
                 </div>
