@@ -17,7 +17,8 @@ export default {
         formLayout: [
             [
                 {
-                    type: "email",
+                    type: "text",
+                    subType: "email",
                     name: "email",
                     id: {
                         field_1: "email"
@@ -42,7 +43,12 @@ export default {
             ],
             [
                 {
-                    type: "password",
+                    type: "inputGroup",
+                    subType: "password",
+                    inputGroupInfo: {
+                        item: <img src={`${process.env.PUBLIC_URL}/assets/icons/eye-view.png`} alt="Eye icon" className="img-fluid eye-icon" />,
+                        position: "end"
+                    },
                     name: "password",
                     id: {
                         field_1: "password"

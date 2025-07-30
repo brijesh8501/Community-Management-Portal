@@ -29,7 +29,7 @@ const FormField = ( { field } ) => {
                             {fieldDetails.label.en.text}
                         </label>
                         <input 
-                            type={fieldDetails.type} 
+                            type={fieldDetails.subType} 
                             className="form-control" 
                             name={fieldDetails.name} 
                             id={fieldDetails.id.field_1}
@@ -37,6 +37,55 @@ const FormField = ( { field } ) => {
                     </>
                 )
                 
+            case 'inputGroup': 
+                
+                // Initialize empty array of input group field
+                let inputGroupField = [];
+
+                // Input group text to be added in input group field
+                const inputGroupItem = <span className="input-group-text">{fieldDetails.inputGroupInfo.item}</span>;
+                
+                // Add input field to the initialized empty array
+                inputGroupField.push(
+                    <input 
+                        type={fieldDetails.subType} 
+                        className="form-control" 
+                        name={fieldDetails.name} 
+                        id={fieldDetails.id.field_1}
+                    />
+                );
+
+                // Check whether input group info exists or not
+                // Check two parameters "item" and "postion" exists
+                // Validate its length is equal to 2; no errors
+                // Check whether to add input group text to start or end position
+                (
+                    fieldDetails.inputGroupInfo &&
+                    fieldDetails.inputGroupInfo.item &&
+                    fieldDetails.inputGroupInfo.position &&
+                    Object.entries(fieldDetails.inputGroupInfo).length == 2
+                )&&( 
+                        (fieldDetails.inputGroupInfo.position === "start")?
+                            inputGroupField.unshift(inputGroupItem)
+                            :
+                            inputGroupField.push(inputGroupItem)
+                )
+
+                // Input group textbox
+                return (
+                    <>
+                        <label 
+                            htmlFor={fieldDetails.name} 
+                            className="form-label"
+                        >
+                            {fieldDetails.label.en.text}
+                        </label>
+                        <div className="input-group">
+                            {inputGroupField}
+                    </div>
+                    </>
+                )
+
             default:
 
                 // Default to text, email, password type
@@ -49,7 +98,7 @@ const FormField = ( { field } ) => {
                             {fieldDetails.label.en.text}
                         </label>
                         <input 
-                            type={fieldDetails.type} 
+                            type={fieldDetails.subType} 
                             className="form-control" 
                             name={fieldDetails.name} 
                             id={fieldDetails.id.field_1}
