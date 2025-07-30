@@ -12,8 +12,8 @@ import { pageURL as loginSlug, pageLinkageTitle as loginPageLinkageTitle } from 
 import { pageURL as registerNewAccountlug, pageLinkageTitle as registerNewAccountLinkageTitle } from "../../../embed/pageConfiguration/account/registerNewAccount";
 // State global context call out
 import { useGlobalContext } from "../../../state/globalContext";
-// Create form field component
-import CreateField from "../../../../../components/form/createField";
+// Create form layout component
+import FormLayout from "../../../../../components/form/layout";
 
 const ForgotPassword = () => {
 
@@ -38,43 +38,7 @@ const ForgotPassword = () => {
                             <p className="mb-0">{message.form.fieldRequired.guj()}</p>
                         </div>
                         <form method="POST">
-                            {
-                                (pageFormLayout && pageFormLayout.length > 0) &&
-                                    pageFormLayout.map( (item, i) => {
-                                        // Form design layout
-                                        return (
-                                            <div className="row" key={i}>
-                                                { 
-                                                    item.map(   ( innerItem, innerI) => 
-                                                    {
-                                                        return (<div className={`${innerItem.class} mt-4`} key={innerI}>
-                                                                <CreateField field={innerItem} />
-                                                        </div>)
-                                                    })
-                                                }
-                                            </div>
-                                        )
-                                    } )
-
-                            }
-                            <div className="d-flex justify-content-start align-items-center gap-3 mt-4">
-                            {
-                                (pageFormButton && Object.keys(pageFormButton).length > 0) &&
-                                    Object.entries(pageFormButton).map(( [ key, value ], i ) => {
-                                        // Create button
-                                        return (
-                                            <button 
-                                                className={`btn ${value.class}`}
-                                                id={value.id}
-                                                name={value.name}
-                                                key={i}
-                                            >
-                                                {`${value.label.en} / ${value.label.guj}`}
-                                            </button>
-                                        )
-                                    })
-                            }
-                            </div>
+                            <FormLayout pageFormLayout={pageFormLayout} pageFormButton={pageFormButton}/>  
                         </form>
                         <div className="d-flex gap-3 justify-content-between align-items-center flex-wrap navigate-wrapper">
                             <Link to={`/${currentPortal}/${loginSlug}/`} className="link">{`${loginPageLinkageTitle.en} / ${loginPageLinkageTitle.guj}`}</Link>

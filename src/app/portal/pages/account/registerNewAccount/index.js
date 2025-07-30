@@ -12,7 +12,7 @@ import { pageURL as loginSlug, pageLinkageTitle as loginPageLinkageTitle } from 
 import { pageURL as forgotPasswordSlug, pageLinkageTitle as forgotPasswordPageLinkageTitle } from "../../../embed/pageConfiguration/account/forgotPassword";
 // State global context call out
 import { useGlobalContext } from "../../../state/globalContext";
-// Create form field component
+// Create form layout component
 import FormLayout from "../../../../../components/form/layout";
 
 const RegisterNewAccount = () => {
@@ -41,8 +41,7 @@ const RegisterNewAccount = () => {
                             <p className="mb-0">{message.form.fieldRequired.guj()}</p>
                         </div>
                         <form method="POST">
-                            <FormLayout pageFormLayout={pageFormLayout} pageFormButton={pageFormButton}/>
-                            
+                            <FormLayout pageFormLayout={pageFormLayout} pageFormButton={pageFormButton}/>  
                         </form>
                         <div className="d-flex gap-3 justify-content-between align-items-center flex-wrap navigate-wrapper">
                             <Link to={`/${currentPortal}/${loginSlug}/`} className="link">{`${loginPageLinkageTitle.en} / ${loginPageLinkageTitle .guj}`}</Link>
