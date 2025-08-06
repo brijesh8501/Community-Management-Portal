@@ -5,6 +5,7 @@ import Login from './pages/account/login';
 import RegisterNewAccount from './pages/account/registerNewAccount';
 import ChangePassword from './pages/account/changePassword';
 import ForgotPassword from './pages/account/forgotPassword';
+import Profile from './pages/account/profile';
 import Dashboard from './pages/dashboard';
 
 
@@ -47,11 +48,12 @@ const Navigate = () => {
     // Return the routes
     return(
         <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/login/" element={<Login />} />
             <Route path="/register/" element={<RegisterNewAccount />} />
             <Route path="/change-password/" element={<ChangePassword />} />
             <Route path="/forgot-password/" element={<ForgotPassword />} />
+            <Route path="/profile/" element={<Profile />} />
             <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
     );

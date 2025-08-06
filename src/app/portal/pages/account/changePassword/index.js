@@ -4,6 +4,8 @@ import "../../../embed/style/main.css";
 import { Link } from "react-router-dom";
 // Brand configuration
 import brandConfiguration from "../../../../../components/brand";
+// Page wrapper of account module
+import PageWrapper from "../pageWrapper";
 // Change password web page configuration 
 import { pageFormLayout, pageFormButton } from "../../../embed/pageConfiguration/account/changePassword";
 // Login web page linkage title
@@ -27,30 +29,23 @@ const ChangePassword = () => {
     const { changePassword, currentPortal } = state; 
 
     return (
-        
-        <section className="peacock-gradient-bg" id="section-wrapper">
-            <div className="container min-vh-100 d-flex gap-5 flex-column justify-content-between align-items-stretch" id="section-inner-wrapper">
-                <div className="d-flex flex-column gap-5 justify-content-center align-items-center flex-fill">
-                    <img src={`${process.env.PUBLIC_URL}/favicon.ico`} alt="Logo" />
-                    <div className="d-flex flex-column gap-4 bg-white py-5 px-3 px-sm-4 p-xxl-5 max-width-550px" id="form-wrapper">
-                        <div className="alert alert-info">
-                            <p className="mb-1">{message.form.fieldRequired.en()}</p>
-                            <p className="mb-0">{message.form.fieldRequired.guj()}</p>
-                        </div>
-                        <form autocomplete="off" method="POST">
-                            <FormLayout pageFormLayout={pageFormLayout} pageFormButton={pageFormButton}/>  
-                        </form>
-                        <div className="d-flex gap-3 justify-content-between align-items-center flex-wrap navigate-wrapper">
-                            <Link to={`/${currentPortal}/${loginSlug}/`} className="link">{`${loginPageLinkageTitle.en} / ${loginPageLinkageTitle.guj}`}</Link>
-                            <Link to={`/${currentPortal}/${forgotPasswordSlug}/`} className="link">{`${forgotPasswordPageLinkageTitle.en} / ${forgotPasswordPageLinkageTitle.guj}`}</Link>
-                        </div>
-                    </div> 
+        // Page wrapper of account module callout --start-- */
+        <PageWrapper>
+            <div className="d-flex flex-column gap-4 bg-white py-5 px-3 px-sm-4 p-xxl-5 max-width-550px" id="form-wrapper">
+                <div className="alert alert-info">
+                    <p className="mb-1">{message.form.fieldRequired.en()}</p>
+                    <p className="mb-0">{message.form.fieldRequired.guj()}</p>
                 </div>
-                <footer className="text-white">
-                    <p className="small text-center mb-0">&copy; 2025</p>
-                </footer>  
-            </div>
-        </section>
+                <form autoComplete="off" method="POST">
+                    <FormLayout pageFormLayout={pageFormLayout} pageFormButton={pageFormButton}/>  
+                </form>
+                <div className="d-flex gap-3 justify-content-between align-items-center flex-wrap navigate-wrapper">
+                    <Link to={`/${currentPortal}/${loginSlug}/`} className="link">{`${loginPageLinkageTitle.en} / ${loginPageLinkageTitle.guj}`}</Link>
+                    <Link to={`/${currentPortal}/${forgotPasswordSlug}/`} className="link">{`${forgotPasswordPageLinkageTitle.en} / ${forgotPasswordPageLinkageTitle.guj}`}</Link>
+                </div>
+            </div> 
+        </PageWrapper>
+        // Page wrapper of account module callout --end-- */
     )
 
 }

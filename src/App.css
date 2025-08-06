@@ -238,12 +238,7 @@
     background: linear-gradient(to bottom, var(--peacock-dark-color), var(--peacock-light-color));
 }
 .peacock-median-gradient-bottom-bg{
-    background: linear-gradient(
-        to right, 
-        var(--peacock-dark-color) 0%,
-        var(--peacock-dark-color) 3%,
-        var(--peacock-median-color) 100%
-    );
+    background: linear-gradient(to right, var(--peacock-dark-color), var(--peacock-light-color));
 }
 .fw-500{
     font-weight: 500 !important;
@@ -461,6 +456,10 @@ a.link{
     width: 20px;
     cursor: pointer;
 }
+.dropdown-menu{
+    border-radius: 0;
+}
+/********************************************************************************************************/
 .line-breaker-wrapper{
     display: flex;
     gap: 0.25rem;

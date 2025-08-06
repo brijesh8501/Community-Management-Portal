@@ -1,7 +1,12 @@
+import GlobalWrapper from "../../portalGlobalWrapper";
+
+
 const Dashboard = () => {
 
     return (
-        <div>Portal Home</div>
+        <GlobalWrapper>
+        Portal Home
+        </GlobalWrapper>
     )
 
 }
