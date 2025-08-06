@@ -62,7 +62,7 @@ export const pageFormLayout = [
             id: {
                 field_1: "lastname"
             },
-            class: "col-12 col-md-6",
+            class: "col-12 col-md-6 mt-4 mt-md-0",
             label: {
                 en: {
                     text: "Surname",
@@ -110,7 +110,7 @@ export const pageFormLayout = [
             id: {
                 field_1: "gender"
             },
-            class: "col-12 col-md-6",
+            class: "col-12 col-md-6 mt-4 mt-md-0",
             label: {
                 en: {
                     text: "Gender",

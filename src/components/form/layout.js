@@ -15,11 +15,11 @@ const FormLayout = ( prop ) => {
                 pageFormLayout.map( (item, i) => {
                     // Form design layout
                     return (
-                        <div className="row" key={i}>
+                        <div className={`row ${( i > 0)? "mt-4" : ""}`} key={i}>
                             { 
                                 item.map(   ( innerItem, innerI) => 
                                 {
-                                    return (<div className={`${innerItem.class} ${( i > 0)? "mt-4" : ""}`} key={innerI}>
+                                    return (<div className={`${innerItem.class}`} key={innerI}>
                                             <CreateField field={innerItem} />
                                     </div>)
                                 })

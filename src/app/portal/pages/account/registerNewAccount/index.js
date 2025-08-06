@@ -14,6 +14,8 @@ import { pageURL as forgotPasswordSlug, pageLinkageTitle as forgotPasswordPageLi
 import { useGlobalContext } from "../../../state/globalContext";
 // Create form layout component
 import FormLayout from "../../../../../components/form/layout";
+// Page headline component
+import HeadLine from "../../../../../components/pageHeadLine";
 
 const RegisterNewAccount = () => {
 
@@ -24,6 +26,16 @@ const RegisterNewAccount = () => {
 
     // Get state of register new account and current portal
     const { registerNewAccount, currentPortal } = state; 
+
+    // Page headline style
+    const pageHeadLineStyle = { 
+        label: {
+            class: "text-dark"
+        },
+        hrLine: {
+            class: "bg-dark"
+        } 
+    };
   
     return (
         
@@ -31,16 +43,13 @@ const RegisterNewAccount = () => {
             <div className="container min-vh-100 d-flex gap-5 flex-column justify-content-between align-items-stretch" id="section-inner-wrapper">
                 <div className="d-flex flex-column gap-5 justify-content-center align-items-center flex-fill">
                     <img src={`${process.env.PUBLIC_URL}/favicon.ico`} alt="Logo" />
-                    <div className="d-flex flex-column gap-4 bg-white p-5 max-width-650px">
-                        <h1 className="d-flex flex-column gap-2 justify-conten-center align-items-center h4 text-center">
-                            <div>{`${registerNewAccountTitle.en}`}</div>
-                            <div>{`${registerNewAccountTitle.guj}`}</div>
-                        </h1>
+                    <div className="d-flex flex-column gap-4 bg-white py-5 px-3 px-sm-4 p-xxl-5 max-width-650px" id="form-wrapper">
+                        <HeadLine title={registerNewAccountTitle} style={ pageHeadLineStyle }/>
                         <div className="alert alert-info">
                             <p className="mb-1">{message.form.fieldRequired.en()}</p>
                             <p className="mb-0">{message.form.fieldRequired.guj()}</p>
                         </div>
-                        <form method="POST">
+                        <form autocomplete="off" method="POST">
                             <FormLayout pageFormLayout={pageFormLayout} pageFormButton={pageFormButton}/>  
                         </form>
                         <div className="d-flex gap-3 justify-content-between align-items-center flex-wrap navigate-wrapper">

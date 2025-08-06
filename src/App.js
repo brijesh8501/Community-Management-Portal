@@ -3,6 +3,7 @@ import React, { Suspense } from 'react';
 import { Navigate, Routes, Route } from 'react-router-dom';
 import RequireTrailingSlashURL from './components/helper/requireTrailingSlashURL';
 import './App.css';
+import PageNotFound from './404';
 
 // Lazily load your main portal components
 // This is a lazy loading technique to improve the performance of the app
@@ -24,8 +25,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Website />} />
           <Route path="/portal/*" element={<Portal />} />
+          <Route path="/404/" element={<PageNotFound />} />
           <Route path="*" element={<Navigate to="/404/" replace />} />
-          <Route path="/404/" element={<div>404 - Page Not Found</div>} />
         </Routes>
       </RequireTrailingSlashURL>
     </Suspense>
