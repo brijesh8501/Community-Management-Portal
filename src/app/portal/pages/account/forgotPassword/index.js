@@ -7,11 +7,11 @@ import brandConfiguration from "../../../../../components/brand";
 // Page wrapper of account module
 import PageWrapper from "../pageWrapper";
 // Forgot password web page configuration
-import { pageFormLayout, pageFormButton } from "../../../embed/pageConfiguration/account/forgotPassword";
+import { pageFormLayout, pageFormButton } from "./pageConfig";
 // Login web page linkage title
-import { pageURL as loginSlug, pageLinkageTitle as loginPageLinkageTitle } from "../../../embed/pageConfiguration/account/login";
+import { pageURL as loginSlug, pageLinkageTitle as loginPageLinkageTitle } from "../login/pageConfig";
 // Create an account / Register new account web page linkage title
-import { pageURL as registerNewAccountlug, pageLinkageTitle as registerNewAccountLinkageTitle } from "../../../embed/pageConfiguration/account/registerNewAccount";
+import { pageURL as registerNewAccountlug, pageLinkageTitle as registerNewAccountLinkageTitle } from "../registerNewAccount/pageConfig";
 // State global context call out
 import { useGlobalContext } from "../../../state/globalContext";
 // Create form layout component

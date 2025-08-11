@@ -87,6 +87,26 @@ const CreateField = ( { field } ) => {
                     </>
                 )
 
+            case 'textarea':
+
+                // Textarea
+                return (
+                    <>
+                        <label 
+                            htmlFor={fieldDetails.name} 
+                            className="form-label"
+                        >
+                            {fieldDetails.label.en.text} / {fieldDetails.label.guj.text} 
+                        </label>
+                        <textarea 
+                            type={fieldDetails.subType} 
+                            className="form-control" 
+                            name={fieldDetails.name} 
+                            id={fieldDetails.id.field_1}
+                        ></textarea>
+                    </>
+                )
+
             default:
 
                 // Default to text, email, password type

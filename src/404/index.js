@@ -1,5 +1,5 @@
 // Configuration of 404 page
-import pageConfiguration from "./embed/pageConfiguration";
+import pageConfiguration from "./pageConfig";
 // Component of page headline
 import HeadLine from "../components/pageHeadLine";
 
@@ -20,8 +20,8 @@ const PageNotFound = () => {
     };
 
     return (
-        <section id="section-wrapper">
-            <div className="container min-vh-100 d-flex flex-column justify-content-between align-items-stretch" id="section-inner-wrapper">
+        <main className="main-style-not-required">
+            <div className="container min-vh-100 body-wrapper d-flex flex-column justify-content-between align-items-stretch">
                 <div className="d-flex flex-column gap-5 justify-content-center align-items-center flex-fill">
                     <img src={`${process.env.PUBLIC_URL}/favicon.ico`} alt="Logo" />
                     <div className="alert alert-danger text-center py-5">
@@ -33,7 +33,7 @@ const PageNotFound = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </main>
     )
 
 }

@@ -49,7 +49,8 @@ const NavBar = ( { children, isOffcanvasOpen, setIsOffcanvasOpen } ) => {
 
     return (
         <nav className="navbar navbar-light bg-white fixed-top">
-            <div className="container-fluid">
+            <div className="container">
+                <a className="navbar-brand" href="#">Brand</a>
                 <button 
                     className="navbar-toggler" 
                     type="button" 
@@ -58,9 +59,8 @@ const NavBar = ( { children, isOffcanvasOpen, setIsOffcanvasOpen } ) => {
                 >
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <a className="navbar-brand" href="#">Brand</a>
                 <div 
-                    className="offcanvas offcanvas-start"
+                    className="offcanvas offcanvas-end"
                     tabIndex="-1" 
                     id="offcanvasDarkNavbar" 
                     aria-labelledby="offcanvasDarkNavbarLabel"
@@ -74,7 +74,7 @@ const NavBar = ( { children, isOffcanvasOpen, setIsOffcanvasOpen } ) => {
                             aria-label="Close"
                         ></button>
                     </div>
-                    <div className="offcanvas-body">
+                    <div className="offcanvas-body px-0">
                         {children}
                     </div>
                 </div>
