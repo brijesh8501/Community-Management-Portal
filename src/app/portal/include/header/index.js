@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useGlobalContext } from "../../state/globalContext";
 // Page Configuration of header
 import { headerConfig } from "./pageConfig";
-
+// Components
 import NavBar from './navBar'; 
 
 const Header = () => {
