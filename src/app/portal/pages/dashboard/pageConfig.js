@@ -15,4 +15,9 @@ export const pageLinkageTitle = {
 // URL slug
 export const pageURL = "dashboard";
 
+export const familyTree = {
+    en: "Your Family Tree",
+    guj: "તમારું કુટુંબ વૃક્ષ"
+};
+
 

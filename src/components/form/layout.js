@@ -51,7 +51,7 @@ const FormLayout = ( prop ) => {
         :
 
         // Issues occured while creating form layout
-        <div class="alert alert-danger">Something went wrong to create form layout</div>
+        <div className="alert alert-danger">Something went wrong to create form layout</div>
 
 }
 

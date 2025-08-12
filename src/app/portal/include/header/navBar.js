@@ -1,7 +1,18 @@
+// React files
 import { useEffect, useRef } from 'react';
-import { Offcanvas } from 'bootstrap';
+// Boostrap components
+// import { Offcanvas } from 'bootstrap';
+// State global context call out
+import { useGlobalContext } from "../../state/globalContext";
 
 const NavBar = ( { children, isOffcanvasOpen, setIsOffcanvasOpen } ) => {
+    
+    // State
+    const { state, dispatch } = useGlobalContext();
+
+    // Get state of current portal
+    const { currentPortal } = state;
+
     // useRef to store a mutable value that doesn't cause a re-render
     const offcanvasRef = useRef(null);
 
@@ -11,7 +22,7 @@ const NavBar = ( { children, isOffcanvasOpen, setIsOffcanvasOpen } ) => {
         if (!offcanvasElement) return;
 
         // Get or create the Bootstrap offcanvas instance
-        const bsOffcanvas = Offcanvas.getOrCreateInstance(offcanvasElement);
+        const bsOffcanvas = window.bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
         offcanvasRef.current = bsOffcanvas;
 
         // Event handler to synchronize React state with Bootstrap's native closing
@@ -50,7 +61,7 @@ const NavBar = ( { children, isOffcanvasOpen, setIsOffcanvasOpen } ) => {
     return (
         <nav className="navbar navbar-light bg-white fixed-top">
             <div className="container">
-                <a className="navbar-brand" href="#">Brand</a>
+                <a className="navbar-brand" href={`/${currentPortal}/`}>Brand</a>
                 <button 
                     className="navbar-toggler" 
                     type="button" 

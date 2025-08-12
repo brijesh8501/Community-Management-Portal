@@ -2,9 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import * as bootstrap from 'bootstrap';
 import './index.css';
 import App from './App';
+
+// Make Bootstrap available globally
+window.bootstrap = bootstrap;
 
 // Create the root element
 const root = ReactDOM.createRoot(document.getElementById('root'));

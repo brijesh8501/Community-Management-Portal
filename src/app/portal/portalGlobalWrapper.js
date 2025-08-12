@@ -10,7 +10,7 @@ const GlobalWrapper = ({ children }) => {
     return (
         <>
         <Header />
-        <a class="visually-hidden-focusable" href="#main">Skip to main content</a>
+        <a className="visually-hidden-focusable" href="#main">Skip to main content</a>
         <main id="main" className="portal-wrapper body-wrapper">
             { children }
         </main>

@@ -1,6 +1,6 @@
 // Portal css
 import "../../../embed/style/main.css";
-// React Files
+
 import { Link } from "react-router-dom";
 // Brand configuration
 import brandConfiguration from "../../../../../components/brand";
@@ -42,7 +42,7 @@ const RegisterNewAccount = () => {
     return (
         // Page wrapper of account module callout --start-- */
         <PageWrapper>
-            <div className="d-flex flex-column gap-4 bg-white py-5 px-3 px-sm-4 p-xxl-5 max-width-650px" id="form-wrapper">
+            <div className="d-flex flex-column gap-4 py-5 px-3 px-sm-4 p-xxl-5 max-width-650px" id="form-wrapper">
                 <HeadLine title={registerNewAccountTitle} style={ pageHeadLineStyle }/>
                 <div className="alert alert-info">
                     <p className="mb-1">{message.form.fieldRequired.en()}</p>

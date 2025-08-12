@@ -34,7 +34,7 @@ const Profile = () => {
     return (
         <GlobalWrapper>
         <section className="container section-wrapper">
-            <div className="d-flex flex-column gap-4 bg-white py-5 px-3 px-sm-4 p-xxl-5" id="form-wrapper">
+            <div className="d-flex flex-column gap-4 py-5 px-3 px-sm-4 p-xxl-5" id="form-wrapper">
                 <HeadLine title={profileTitle} style={ pageHeadLineStyle }/>
                 <div className="alert alert-info">
                     <p className="mb-1">{message.form.fieldRequired.en()}</p>

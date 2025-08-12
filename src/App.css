@@ -409,7 +409,7 @@ a.link{
     border: 0;
     border-radius: 0;
     color: black;
-    background-color: var(--silver-light-color);
+    background-color: white;
     border-left: 5px solid var(--orange-color);
     
 }
@@ -495,13 +495,30 @@ input[readonly]:focus{
 #offcanvasDarkNavbar.showing .navbar-nav .nav-item .nav-link{
     padding: 15px !important;
 }
+#offcanvasDarkNavbar .navbar-nav .nav-item{
+    border-bottom: 1px solid var(--silver-color);
+}
+#offcanvasDarkNavbar .navbar-nav .nav-item:first-child{
+    border-top: 1px solid var(--silver-color);
+}
+#offcanvasDarkNavbar.show .dropdown-menu .dropdown-item.active,
+#offcanvasDarkNavbar.showing .dropdown-menu .dropdown-item.active{
+    background-color: #91b5c3;
+    color: var(--peacock-median-color);
+    font-weight: 500;
+}
 #offcanvasDarkNavbar.show .navbar-nav .nav-item .nav-link.active,
 #offcanvasDarkNavbar.show .navbar-nav .nav-item .nav-link:focus,
 #offcanvasDarkNavbar.show .navbar-nav .nav-item .nav-link:hover,
 #offcanvasDarkNavbar.showing .navbar-nav .nav-item .nav-link.active,
 #offcanvasDarkNavbar.showing .navbar-nav .nav-item .nav-link:focus,
-#offcanvasDarkNavbar.showing .navbar-nav .nav-item .nav-link:hover{
-    background-color: var(--peacock-median-color);
+#offcanvasDarkNavbar.showing .navbar-nav .nav-item .nav-link:hover,
+#offcanvasDarkNavbar.show .dropdown-menu .dropdown-item:focus,
+#offcanvasDarkNavbar.show .dropdown-menu .dropdown-item:hover,
+#offcanvasDarkNavbar.showing .dropdown-menu .dropdown-item:focus,
+#offcanvasDarkNavbar.showing .dropdown-menu .dropdown-item:hover,
+#offcanvasDarkNavbar .nav-link.dropdown-toggle.show{
+    background-color: var(--peacock-median-color) !important;
     color: white !important;
     text-decoration: none;
     text-underline-offset: unset;
@@ -510,8 +527,20 @@ input[readonly]:focus{
 #offcanvasDarkNavbar.showing .btn-close:hover{
     filter: brightness(0) saturate(100%) invert(64%) sepia(46%) saturate(557%) hue-rotate(125deg) brightness(88%) contrast(88%);
 }
-.dropdown-menu{
+#offcanvasDarkNavbar .nav-item.dropdown .dropdown-menu{
+    margin-top: 0;
+    background-color: var(--silver-light-color);
     border-radius: 0;
+    border: 0;
+    margin-left: 15px;
+    padding: 0;;
+}
+#offcanvasDarkNavbar .nav-item.dropdown .dropdown-menu .dropdown-item{
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+}
+#offcanvasDarkNavbar .nav-item.dropdown .dropdown-menu li:not(:last-child){
+    border-bottom: 1px solid var(--silver-color);
 }
 /**************** Navbar **************************/
 /**************** Page body **************************/
@@ -545,4 +574,10 @@ footer{
 #form-wrapper{
     border-radius: var(--form-border-radius);
     box-shadow: 0 0 20px rgba(var(--dark-color-rgb), var(--dark-color-opacity));
+    background-color: var(--silver-light-color);
+}
+.dashboard-section{
+    border-radius: var(--form-border-radius);
+    box-shadow: 0 0 20px rgba(var(--dark-color-rgb), var(--dark-color-opacity));
+    background-color: var(--silver-light-color);
 }
