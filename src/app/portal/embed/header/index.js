@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from 'react';
 // State global context call out
 import { useGlobalContext } from "../../state/globalContext";
+import permaLink from '../../../../components/helper/permaLink';
 // Page Configuration of header
 import { headerConfig } from "./pageConfig";
 // Components
@@ -31,7 +32,7 @@ const Header = () => {
     
     // URL segment 2
     const currentURLPageSegment2 = currentURLPathSegments[currentURLPathSegments.length - 1];
-
+    console.log(currentURLPageSegment1,"1");console.log(currentURLPageSegment2,"2");
     // State to control the offcanvas visibility
     const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
 
@@ -50,7 +51,7 @@ const Header = () => {
                     {
                         sideBar.map( (item, i) => {
                                                      
-                            // Href tag acitve class
+                            // Menu items href tag active class
                             const anchorLinkClass = `${ ( 
                                     ( 
                                         ( currentURLPageSegment1 && currentURLPageSegment1 === item.link )  
@@ -71,30 +72,28 @@ const Header = () => {
 
                                     // Offcanvas dropdown navigation from sidebar
                                     <li className="nav-item dropdown" key={i}>
-                                        <button
-                                            to="#"
+                                        <a
+                                            href="#"
                                             className={`nav-link dropdown-toggle ${ (anchorLinkClass) && `${anchorLinkClass} show` }`} 
                                             role="button" 
                                             data-bs-toggle="dropdown" 
                                             aria-expanded={`${ (anchorLinkClass)? "true" : "false" }`}
                                         >
                                             {`${item.label.en} / ${item.label.guj}`}
-                                        </button>
+                                        </a>
                                         <ul className={`dropdown-menu ${ (anchorLinkClass) && "show" }`} aria-labelledby="navbarDropdown">
                                             {
                                                 item.options.map( ( innerItem, innerI) => {
 
-                                                    const anchorDropdownLinkClass = `${( 
-                                                            ( currentURLPageSegment1 === item.link && currentURLPageSegment2 === innerItem.link) 
-                                                                || 
-                                                            ( currentURLPageSegment1 === currentPortal && innerItem.link === "/" ) 
-                                                        ) && 
-                                                            "active" 
-                                                        }`;
+                                                    // Dropdown menu items Hhef tag active class
+                                                    const anchorDropdownLinkClass = `${(`${currentURLPageSegment1}/${currentURLPageSegment2}` === innerItem.link)&& "active" }`;
 
                                                     return (<li key={innerI}>
                                                         <Link 
-                                                            to={`/${currentPortal}/${innerItem.link}`}
+                                                            to={ permaLink([
+                                                                currentPortal,
+                                                                innerItem.link
+                                                            ]) }
                                                             className={`dropdown-item ${anchorDropdownLinkClass}`}
                                                             onClick={closeOffcanvas}
                                                         >
@@ -107,11 +106,14 @@ const Header = () => {
                                     </li>
 
                                     :
-
+                                    
                                     // Offcanavas simple navigation from sidebar
                                     <li className="nav-item" key={i}>
                                         <Link 
-                                            to={`/${currentPortal}/${ (item.link !== "/")? `${item.link}/` : " " }`}
+                                            to={ permaLink([
+                                                currentPortal,
+                                                (item.link !== "/")? `${item.link}` : ""
+                                            ]) }
                                             className={`nav-link ${anchorLinkClass}`}
                                             onClick={closeOffcanvas}
                                         >
