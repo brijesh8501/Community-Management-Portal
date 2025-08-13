@@ -8,6 +8,8 @@ import brandConfiguration from "../../../../../components/brand";
 import PageWrapper from "../pageWrapper";
 // State global context call out
 import { useGlobalContext } from "../../../state/globalContext";
+// Permalink
+import permaLink from '../../../../../components/helper/permaLink';
 // Create form layout component
 import FormLayout from "../../../../../components/form/layout";
 
@@ -39,8 +41,22 @@ const ChangePassword = () => {
                     <FormLayout pageFormLayout={pageFormLayout} pageFormButton={pageFormButton}/>  
                 </form>
                 <div className="d-flex gap-3 justify-content-between align-items-center flex-wrap navigate-wrapper">
-                    <Link to={`/${currentPortal}/${loginPageMeta.pageSlug}/`} className="link">{`${loginPageMeta.linkageLabel.en} / ${loginPageMeta.linkageLabel.guj}`}</Link>
-                    <Link to={`/${currentPortal}/${forgotPasswordPageMeta.pageSlug}/`} className="link">{`${forgotPasswordPageMeta.linkageLabel.en} / ${forgotPasswordPageMeta.linkageLabel.guj}`}</Link>
+                    <Link 
+                        to={ permaLink([
+                            currentPortal,
+                            loginPageMeta.pageSlug
+                        ]) }
+                        className="link">
+                            {`${loginPageMeta.linkageLabel.en} / ${loginPageMeta.linkageLabel.guj}`}
+                    </Link>
+                    <Link 
+                        to={ permaLink([
+                            currentPortal,
+                            forgotPasswordPageMeta.pageSlug
+                        ]) }
+                        className="link">
+                            {`${forgotPasswordPageMeta.linkageLabel.en} / ${forgotPasswordPageMeta.linkageLabel.guj}`}
+                    </Link>
                 </div>
             </section> 
         </PageWrapper>

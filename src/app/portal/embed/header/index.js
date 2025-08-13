@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from 'react';
 // State global context call out
 import { useGlobalContext } from "../../state/globalContext";
+// Permalink
 import permaLink from '../../../../components/helper/permaLink';
 // Page Configuration of header
 import { headerConfig } from "./pageConfig";

@@ -8,6 +8,8 @@ import brandConfiguration from "../../../../../components/brand";
 import { useGlobalContext } from "../../../state/globalContext";
 // Page wrapper of account module
 import PageWrapper from "../pageWrapper";
+// Permalink
+import permaLink from '../../../../../components/helper/permaLink';
 // Create form layout component
 import FormLayout from "../../../../../components/form/layout";
 // Page meta information
@@ -38,8 +40,22 @@ const ForgotPassword = () => {
                     <FormLayout pageFormLayout={pageFormLayout} pageFormButton={pageFormButton}/>  
                 </form>
                 <div className="d-flex gap-3 justify-content-between align-items-center flex-wrap navigate-wrapper">
-                    <Link to={`/${currentPortal}/${loginPageMeta.pageSlug}/`} className="link">{`${loginPageMeta.linkageLabel.en} / ${loginPageMeta.linkageLabel.guj}`}</Link>
-                    <Link to={`/${currentPortal}/${registerPageMeta.pageSlug}/`} className="link">{`${registerPageMeta.linkageLabel.en} / ${registerPageMeta.linkageLabel.guj}`}</Link>
+                    <Link 
+                        to={ permaLink([
+                            currentPortal,
+                            loginPageMeta.pageSlug
+                        ]) } 
+                        className="link">
+                            {`${loginPageMeta.linkageLabel.en} / ${loginPageMeta.linkageLabel.guj}`}
+                    </Link>
+                    <Link 
+                        to={ permaLink([
+                            currentPortal,
+                            registerPageMeta.pageSlug
+                        ]) }
+                        className="link">
+                            {`${registerPageMeta.linkageLabel.en} / ${registerPageMeta.linkageLabel.guj}`}
+                    </Link>
                 </div>
             </section>
         </PageWrapper>
