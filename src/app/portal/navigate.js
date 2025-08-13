@@ -6,6 +6,7 @@ import RegisterNewAccount from './pages/account/register';
 import ChangePassword from './pages/account/changePassword';
 import ForgotPassword from './pages/account/forgotPassword';
 import Profile from './pages/account/profile';
+import FamilyHistory from './pages/family/history';
 import FamilySearch from './pages/family/search';
 import BrideGroomSearch from './pages/brideGroom/search';
 import Dashboard from './pages/dashboard';
@@ -56,6 +57,7 @@ const Navigate = () => {
             <Route path="/change-password/" element={<ChangePassword />} />
             <Route path="/forgot-password/" element={<ForgotPassword />} />
             <Route path="/profile/" element={<Profile />} />
+            <Route path="/family/history/" element={<FamilyHistory />} />
             <Route path="/family/search/" element={<FamilySearch />} />
             <Route path="/bride-groom/search/" element={<BrideGroomSearch />} />
             <Route path="/dashboard/" element={<Dashboard />} />

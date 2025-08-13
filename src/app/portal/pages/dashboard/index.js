@@ -24,7 +24,7 @@ const Dashboard = () => {
         <GlobalWrapper>
             <div className="container">
                 <h1 className="visually-hidden">{`${dashboardModuleMeta.label.en} / ${dashboardModuleMeta.label.guj}`}</h1>
-                <section className="dashboard-section section-wrapper p-5 d-none" id="family-tree-section">
+                <section className="section-wrapper p-5 d-none" id="family-tree-section">
                     <HeadLine title={familySectionMeta.label} style={ pageHeadLineStyle } headTag="h2" />
                     <div>
                         <div className="d-flex justify-content-center align-items-center my-5" id="family-tree-image">

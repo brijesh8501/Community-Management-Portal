@@ -29,7 +29,7 @@ const Login = () => {
     return (
         // Page wrapper of account module callout --start-- */
         <PageWrapper>
-            <div className="d-flex flex-column gap-4 py-5 px-3 px-sm-4 p-xxl-5 max-width-550px" id="form-wrapper">
+            <section className="section-wrapper d-flex flex-column gap-4 py-5 px-3 px-sm-4 p-xxl-5 max-width-550px">
                 <div className="alert alert-info">
                     <p className="mb-2">{message.form.fieldRequired.en()}</p>
                     <p className="mb-0">{message.form.fieldRequired.guj()}</p>
@@ -41,7 +41,7 @@ const Login = () => {
                     <Link to={`/${currentPortal}/${registerPageMeta.pageSlug}/`} className="link">{`${registerPageMeta.linkageLabel.en} / ${registerPageMeta.linkageLabel.guj}`}</Link>
                     <Link to={`/${currentPortal}/${forgotPasswordPageMeta.pageSlug}/`} className="link">{`${forgotPasswordPageMeta.linkageLabel.en} / ${forgotPasswordPageMeta.linkageLabel.guj}`}</Link>
                 </div>
-            </div>
+            </section>
         </PageWrapper>
         // Page wrapper of account module callout --end-- */
     )

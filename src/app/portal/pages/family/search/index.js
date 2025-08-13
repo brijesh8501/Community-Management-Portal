@@ -29,7 +29,7 @@ const FamilySearch = () => {
     return (
         <GlobalWrapper>
             <div className="container">
-                <section className="dashboard-section section-wrapper p-5" id="family-tree-section">
+                <section className="section-wrapper p-5" id="family-tree-section">
                     <div className="d-flex flex-column gap-4">
                         <HeadLine title={familySearchPageMeta.label} style={ pageHeadLineStyle } />
                         <form autoComplete="off" method="POST">
