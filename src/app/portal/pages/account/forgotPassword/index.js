@@ -1,21 +1,19 @@
-// Portal css
-import "../../../embed/style/main.css";
 // React Files
 import { Link } from "react-router-dom";
+// Portal css
+import "../../../embed/style/main.css";
 // Brand configuration
 import brandConfiguration from "../../../../../components/brand";
-// Page wrapper of account module
-import PageWrapper from "../pageWrapper";
-// Forgot password web page configuration
-import { pageFormLayout, pageFormButton } from "./pageConfig";
-// Login web page linkage title
-import { pageURL as loginSlug, pageLinkageTitle as loginPageLinkageTitle } from "../login/pageConfig";
-// Create an account / Register new account web page linkage title
-import { pageURL as registerNewAccountlug, pageLinkageTitle as registerNewAccountLinkageTitle } from "../registerNewAccount/pageConfig";
 // State global context call out
 import { useGlobalContext } from "../../../state/globalContext";
+// Page wrapper of account module
+import PageWrapper from "../pageWrapper";
 // Create form layout component
 import FormLayout from "../../../../../components/form/layout";
+// Page meta information
+import { loginPageMeta, registerPageMeta  } from "../../../embed/pageMeta";
+// Forgot password web page configuration
+import { pageFormLayout, pageFormButton } from "./pageConfig";
 
 const ForgotPassword = () => {
 
@@ -40,8 +38,8 @@ const ForgotPassword = () => {
                     <FormLayout pageFormLayout={pageFormLayout} pageFormButton={pageFormButton}/>  
                 </form>
                 <div className="d-flex gap-3 justify-content-between align-items-center flex-wrap navigate-wrapper">
-                    <Link to={`/${currentPortal}/${loginSlug}/`} className="link">{`${loginPageLinkageTitle.en} / ${loginPageLinkageTitle.guj}`}</Link>
-                    <Link to={`/${currentPortal}/${registerNewAccountlug}/`} className="link">{`${registerNewAccountLinkageTitle.en} / ${registerNewAccountLinkageTitle.guj}`}</Link>
+                    <Link to={`/${currentPortal}/${loginPageMeta.pageSlug}/`} className="link">{`${loginPageMeta.linkageLabel.en} / ${loginPageMeta.linkageLabel.guj}`}</Link>
+                    <Link to={`/${currentPortal}/${registerPageMeta.pageSlug}/`} className="link">{`${registerPageMeta.linkageLabel.en} / ${registerPageMeta.linkageLabel.guj}`}</Link>
                 </div>
             </div>
         </PageWrapper>

@@ -14,21 +14,6 @@ Structure:
 ***********************************************/
 // Page configuration of register new account
 
-// Title
-export const pageTitle = {
-    en: "My Profile",
-    guj: "મારી પ્રોફાઇલ"
-};
-
-// If required, linkage title
-export const pageLinkageTitle = {
-    en: "My Profile",
-    guj: "મારી પ્રોફાઇલ"
-};
-
-// URL slug
-export const pageURL = "register";
-
 // Form layout
 export const pageFormLayout = [
     [ 

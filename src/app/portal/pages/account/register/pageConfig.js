@@ -14,21 +14,6 @@ Structure:
 ***********************************************/
 // Page configuration of register new account
 
-// Title
-export const pageTitle = {
-    en: "Create a new account",
-    guj: "નવું ખાતું બનાવો"
-};
-
-// If required, linkage title
-export const pageLinkageTitle = {
-    en: "Create an account",
-    guj: "એકાઉન્ટ બનાવો"
-};
-
-// URL slug
-export const pageURL = "register";
-
 // Form layout
 export const pageFormLayout = [
     [ 

@@ -1,7 +1,7 @@
 // Header
-import Header from "./include/header";
+import Header from "./embed/header";
 // Footer
-import Footer from "./include/footer";
+import Footer from "./embed/footer";
 
 
 // Portal pages wrapper

@@ -1,13 +1,15 @@
 // Brand configuration
 import brandConfiguration from "../../../../../components/brand";
-// Page wrapper of account module
-import GlobalWrapper from "../../../portalGlobalWrapper";
-// Page configuraion of family search
-import { pageTitle, pageFormLayout, pageFormButton } from "./pageConfig";
 // Create form layout component
 import FormLayout from "../../../../../components/form/layout";
+// Page wrapper of account module
+import GlobalWrapper from "../../../portalGlobalWrapper";
+// Page meta information
+import { brideGroomSearchPageMeta  } from "../../../embed/pageMeta";
 // Page headline component
 import HeadLine from "../../../../../components/pageHeadLine";
+// Page configuraion of family search
+import { pageFormLayout, pageFormButton } from "./pageConfig";
 
 const BrideGroomSearch = () => {
 
@@ -29,7 +31,7 @@ const BrideGroomSearch = () => {
             <div className="container">
                 <section className="dashboard-section section-wrapper p-5" id="family-tree-section">
                     <div className="d-flex flex-column gap-4">
-                        <HeadLine title={pageTitle} style={ pageHeadLineStyle } />
+                        <HeadLine title={brideGroomSearchPageMeta.label} style={ pageHeadLineStyle } />
                         <form autoComplete="off" method="POST">
                             <FormLayout pageFormLayout={pageFormLayout} pageFormButton={pageFormButton}/>  
                         </form>

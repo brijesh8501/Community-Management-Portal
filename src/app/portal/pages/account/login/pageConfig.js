@@ -14,21 +14,6 @@ Structure:
 ***********************************************/
 // Page configuration of login
 
-// Title
-export const pageTitle = {
-    en: "Log In",
-    guj: "લોગ ઇન કરો"
-};
-
-// If required, Linkage title
-export const pageLinkageTitle = {
-    en: "Log In",
-    guj: "લોગ ઇન કરો"
-};
-
-// URL slug
-export const pageURL = "login";
-
 // Form layout
 export const pageFormLayout = [
 [

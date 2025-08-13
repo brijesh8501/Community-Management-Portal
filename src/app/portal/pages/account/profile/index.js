@@ -3,12 +3,14 @@ import GlobalWrapper from "../../../portalGlobalWrapper";
 import brandConfiguration from "../../../../../components/brand";
 // State global context call out
 import { useGlobalContext } from "../../../state/globalContext";
-// Create form layout component
-import FormLayout from "../../../../../components/form/layout";
 // Page headline component
 import HeadLine from "../../../../../components/pageHeadLine";
+// Create form layout component
+import FormLayout from "../../../../../components/form/layout";
+// Page meta information
+import { profilePageMeta  } from "../../../embed/pageMeta";
 // Register new account / Create new account web page configuration
-import { pageTitle as profileTitle, pageFormLayout, pageFormButton } from "./pageConfig";
+import { pageFormLayout, pageFormButton } from "./pageConfig";
 
 
 const Profile = () => {
@@ -35,7 +37,7 @@ const Profile = () => {
         <GlobalWrapper>
         <section className="container section-wrapper">
             <div className="d-flex flex-column gap-4 py-5 px-3 px-sm-4 p-xxl-5" id="form-wrapper">
-                <HeadLine title={profileTitle} style={ pageHeadLineStyle }/>
+                <HeadLine title={profilePageMeta.label} style={ pageHeadLineStyle }/>
                 <div className="alert alert-info">
                     <p className="mb-1">{message.form.fieldRequired.en()}</p>
                     <p className="mb-0">{message.form.fieldRequired.guj()}</p>

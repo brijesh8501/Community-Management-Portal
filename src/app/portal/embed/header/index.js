@@ -18,7 +18,7 @@ const Header = () => {
     const { currentPortal } = state; 
    
     // Header page configuration
-    const { navBar } = headerConfig;
+    const { sideBar } = headerConfig;
 
     // Get current page URL
     const currentURL = useLocation();
@@ -39,8 +39,7 @@ const Header = () => {
     const closeOffcanvas = () => {
         setIsOffcanvasOpen(false);
     };
-
-
+    
     return (
         <header>
             <NavBar 
@@ -49,11 +48,8 @@ const Header = () => {
             >
                 <ul className="navbar-nav">
                     {
-                        navBar.map( (item, i) => {
-                            
-                            // Href tag URL / link
-                            const anchorLink = `/${currentPortal}/${ (item.link !== "/")? `${item.link}/` : " " }`;
-                          
+                        sideBar.map( (item, i) => {
+                                                     
                             // Href tag acitve class
                             const anchorLinkClass = `${ ( 
                                     ( 
@@ -74,8 +70,8 @@ const Header = () => {
                             return ((item.options)?
 
                                     // Offcanvas dropdown navigation from sidebar
-                                    <li className="nav-item dropdown">
-                                        <Link
+                                    <li className="nav-item dropdown" key={i}>
+                                        <button
                                             to="#"
                                             className={`nav-link dropdown-toggle ${ (anchorLinkClass) && `${anchorLinkClass} show` }`} 
                                             role="button" 
@@ -83,7 +79,7 @@ const Header = () => {
                                             aria-expanded={`${ (anchorLinkClass)? "true" : "false" }`}
                                         >
                                             {`${item.label.en} / ${item.label.guj}`}
-                                        </Link>
+                                        </button>
                                         <ul className={`dropdown-menu ${ (anchorLinkClass) && "show" }`} aria-labelledby="navbarDropdown">
                                             {
                                                 item.options.map( ( innerItem, innerI) => {
@@ -96,10 +92,11 @@ const Header = () => {
                                                             "active" 
                                                         }`;
 
-                                                    return (<li>
+                                                    return (<li key={innerI}>
                                                         <Link 
-                                                            to={`${anchorLink}${innerItem.link}/`}
+                                                            to={`/${currentPortal}/${innerItem.link}`}
                                                             className={`dropdown-item ${anchorDropdownLinkClass}`}
+                                                            onClick={closeOffcanvas}
                                                         >
                                                             {`${innerItem.label.en} / ${innerItem.label.guj}`}
                                                         </Link>
@@ -114,7 +111,7 @@ const Header = () => {
                                     // Offcanavas simple navigation from sidebar
                                     <li className="nav-item" key={i}>
                                         <Link 
-                                            to={anchorLink}
+                                            to={`/${currentPortal}/${ (item.link !== "/")? `${item.link}/` : " " }`}
                                             className={`nav-link ${anchorLinkClass}`}
                                             onClick={closeOffcanvas}
                                         >

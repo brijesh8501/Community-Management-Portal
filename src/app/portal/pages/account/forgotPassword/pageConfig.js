@@ -14,21 +14,6 @@ Structure:
 ***********************************************/
 // Page configuration of forgot password
 
-// Title
-export const pageTitle = {
-    en: "Forgot password?",
-    guj: "પાસવર્ડ ભૂલી ગયા છો?"
-};
-
-// If required, linkage title
-export const pageLinkageTitle = {
-    en: "Forgot password?",
-    guj: "પાસવર્ડ ભૂલી ગયા છો?"
-};
-
-// URL slug
-export const pageURL = "forgot-password";
-
 // Form layout
 export const pageFormLayout = [
     [

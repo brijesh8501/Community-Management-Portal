@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Routes, Route } from "react-router-dom";
 import { useGlobalContext } from './state/globalContext';
 import Login from './pages/account/login';
-import RegisterNewAccount from './pages/account/registerNewAccount';
+import RegisterNewAccount from './pages/account/register';
 import ChangePassword from './pages/account/changePassword';
 import ForgotPassword from './pages/account/forgotPassword';
 import Profile from './pages/account/profile';

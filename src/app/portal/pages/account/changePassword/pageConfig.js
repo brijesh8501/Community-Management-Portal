@@ -14,21 +14,6 @@ Structure:
 ***********************************************/
 // Page configuration of change password
 
-// Title
-export const pageTitle = {
-    en: "Change password",
-    guj: "પાસવર્ડ બદલો"
-};
-
-// If required, linkage title
-export const pageLinkageTitle = {
-    en: "Change password",
-    guj: "પાસવર્ડ બદલો"
-};
-
-// URL slug
-export const pageURL = "change-password";
-
 // Form layout
 export const pageFormLayout = [
     [

@@ -1,20 +1,5 @@
 // Page configuration of dashboard
 
-// Title
-export const pageTitle = {
-    en: "Bride & Groom Search",
-    guj: "કન્યા અને વરરાજા શોધ"
-};
-
-// If required, linkage title
-export const pageLinkageTitle = {
-    en: "Bride & Groom Search",
-    guj: "કન્યા અને વરરાજા શોધ"
-};
-
-// URL slug
-export const pageURL = "search";
-
 // Form layout
 export const pageFormLayout = [
     [ 
