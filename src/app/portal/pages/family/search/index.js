@@ -10,6 +10,8 @@ import { familySearchPageMeta  } from "../../../embed/pageMeta";
 import { pageFormLayout, pageFormButton } from "./pageConfig";
 // Page headline component
 import HeadLine from "../../../../../components/pageHeadLine";
+// Pagination table component
+import PaginateTable from "../../../../../components/paginateTable";
 
 const FamilySearch = () => {
 
@@ -35,6 +37,7 @@ const FamilySearch = () => {
                         <form autoComplete="off" method="POST">
                             <FormLayout pageFormLayout={pageFormLayout} pageFormButton={pageFormButton}/>  
                         </form>
+                        <PaginateTable />
                     </div>
                 </section>
             </div>

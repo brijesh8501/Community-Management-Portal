@@ -459,3 +459,47 @@ input[readonly]:focus{
     cursor: no-drop;
 }
 /**************** Form **************************/
+/********** Pagination Table ********************/
+.paginate-table{
+    margin: 0;
+}
+.paginate-table th{
+    position: relative;
+    padding-right: 35px;
+    /* background-color: rgba(0, 0, 0, 0.35); */
+    color: black
+}
+.paginate-table th:after{
+    content: "";
+    display: inline-table;
+    position: absolute;
+    top: 0;
+    right: calc( 0% + 5px);
+    width: 25px;
+    height: 100%;
+    background-image: url('../public/assets/icons/sorting-up.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.table-pagination-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table-pagination-controls .btn-paginate{
+    min-width: 30px;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    color: black;
+    border-top: 1px solid var(--grey-color);
+    border-bottom: 1px solid var(--grey-color);
+    border-left: 1px solid var(--grey-color);
+}
+.table-pagination-controls .btn.btn-paginate.btn-active{
+    background-color: #F2F2F2;
+}
+.table-pagination-controls .btn-paginate:last-child{
+    border-right: 1px solid var(--grey-color);
+}
+/********** Pagination Table ********************/

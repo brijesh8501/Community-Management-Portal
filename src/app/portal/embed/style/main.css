@@ -139,6 +139,9 @@ footer{
 .headline{
     font-size: calc(1.25rem + 0.15vw);
 }
+.sub-headline{
+    font-size: calc(1.15rem + 0.15vw);
+}
 .section-wrapper{
     border-radius: var(--form-border-radius);
     box-shadow: 0 0 20px rgba(var(--dark-color-rgb), var(--dark-color-opacity));
