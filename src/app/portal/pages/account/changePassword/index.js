@@ -11,7 +11,7 @@ import { useGlobalContext } from "../../../state/globalContext";
 // Permalink
 import permaLink from '../../../../../components/helper/permaLink';
 // Create form layout component
-import FormLayout from "../../../../../components/form/layout";
+import FormLayout from "../../../../../components/form/formLayout";
 
 // Page meta information
 import { loginPageMeta, forgotPasswordPageMeta  } from "../../../embed/pageMeta";

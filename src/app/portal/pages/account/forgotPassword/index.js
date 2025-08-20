@@ -11,7 +11,7 @@ import PageWrapper from "../pageWrapper";
 // Permalink
 import permaLink from '../../../../../components/helper/permaLink';
 // Create form layout component
-import FormLayout from "../../../../../components/form/layout";
+import FormLayout from "../../../../../components/form/formLayout";
 // Page meta information
 import { loginPageMeta, registerPageMeta  } from "../../../embed/pageMeta";
 // Forgot password web page configuration

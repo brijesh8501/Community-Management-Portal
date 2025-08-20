@@ -420,6 +420,15 @@ a.link{
     border-left: 5px solid var(--danger-color);
     
 }
+.alert.alert-info.small{
+    border-radius: 0;
+    border: 0;
+    border-left: 5px solid var(--orange-color);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
 .eye-icon{
     width: 20px;
     cursor: pointer;
@@ -489,7 +498,7 @@ input[readonly]:focus{
 }
 .table-pagination-controls .btn-paginate{
     min-width: 30px;
-    padding: 0.5rem 1rem;
+    padding: 0.35rem 1rem;
     border-radius: 0;
     color: black;
     border-top: 1px solid var(--grey-color);
@@ -497,7 +506,9 @@ input[readonly]:focus{
     border-left: 1px solid var(--grey-color);
 }
 .table-pagination-controls .btn.btn-paginate.btn-active{
-    background-color: #F2F2F2;
+    background-color: var(--peacock-median-color) !important;
+    border-color: var(--peacock-median-color) !important;
+    color: white !important;
 }
 .table-pagination-controls .btn-paginate:last-child{
     border-right: 1px solid var(--grey-color);

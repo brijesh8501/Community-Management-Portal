@@ -17,6 +17,18 @@ const CreateField = ( { field } ) => {
         // Switch case to check field type and create field accordingly
         switch (fieldDetails.type) {
 
+            case 'checkbox':
+                return (
+                    <>
+                        <div className="form-check">
+                            <input className="form-check-input" type="checkbox" value="" id={fieldDetails.id.field_1} />
+                            <label className="form-check-label" htmlFor={fieldDetails.id.field_1}>
+                                {fieldDetails.label.en.text} / {fieldDetails.label.guj.text}
+                            </label>
+                        </div>
+                    </>
+                )
+
             case 'dropdown':
 
                 // Select dropdown

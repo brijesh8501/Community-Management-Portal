@@ -23,7 +23,15 @@ export const brideGroomSearchPageMeta = {
         guj: "કન્યા અને વરરાજા શોધ"
     },
     pageSlug: "search",
-    pageRoute: brideGroomModuleMeta.moduleSlug
+    pageRoute: brideGroomModuleMeta.moduleSlug,
+    pageSubSection: {
+        brideGroomList:{
+            label: {
+                en: "List of Bride & Groom",
+                guj: "કન્યા અને વરરાજાની યાદી"
+            }
+        }
+    }
 };
 
 // Pages

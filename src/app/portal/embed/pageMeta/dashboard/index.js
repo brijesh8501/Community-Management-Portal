@@ -11,13 +11,3 @@ export const dashboardModuleMeta = {
 }
 
 // Pages
-
-// Sections
-export const familySectionMeta = {
-    label: {
-        en: "Your Family Tree",
-        guj: "તમારું કુટુંબ વૃક્ષ"
-    }
-};
-
-// Pages

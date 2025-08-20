@@ -1,4 +1,7 @@
 /* ********** Portal Layout Style ********** */
+legend.text-decoration-underline{
+    text-underline-offset: 7px;
+}
 .max-width-450px{
     max-width: 450px;
     width: 100%;

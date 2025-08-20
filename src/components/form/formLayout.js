@@ -3,9 +3,8 @@ import CreateField from "./createField";
 
 const FormLayout = ( prop ) => {
 
-    // Prop of page form layout and button
+    // Prop of page form layout
     const pageFormLayout = prop.pageFormLayout;
-    const pageFormButton = prop.pageFormButton;
 
     // Create form layout: row and its field
     return (pageFormLayout && pageFormLayout.length > 0)?
@@ -28,24 +27,6 @@ const FormLayout = ( prop ) => {
                     )
                 } )
             }
-            <div className="d-flex justify-content-start align-items-center gap-3 mt-4">
-            {
-                (pageFormButton && Object.keys(pageFormButton).length > 0) &&
-                    Object.entries(pageFormButton).map(( [ key, value ], i ) => {
-                        // Create button
-                        return (
-                            <button 
-                                className={`btn ${value.class}`}
-                                id={value.id}
-                                name={value.name}
-                                key={i}
-                            >
-                                {`${value.label.en} / ${value.label.guj}`}
-                            </button>
-                        )
-                    })
-            }
-            </div>
         </>
                  
         :

@@ -6,7 +6,7 @@ import { useGlobalContext } from "../../../state/globalContext";
 // Page headline component
 import HeadLine from "../../../../../components/pageHeadLine";
 // Create form layout component
-import FormLayout from "../../../../../components/form/layout";
+import FormLayout from "../../../../../components/form/formLayout";
 // Page meta information
 import { profilePageMeta  } from "../../../embed/pageMeta";
 // Register new account / Create new account web page configuration
