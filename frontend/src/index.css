@@ -1,0 +1,17 @@
+::root{
+
+    --primary-color: rgb(88, 98, 42);
+    --secondary-color: rgb(0, 58, 77);
+    --tertiary-color: #e9e9e5;
+    --silver-color: #f3f3f4;
+
+}
+
+/*************************
+ * Navbar Styles
+************************/
+.navbar-logo {
+    width: 250px;
+ 
+}
+

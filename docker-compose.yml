@@ -1,0 +1,26 @@
+services:
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "5173:80"
+  #   volumes:
+  #     - ./frontend:/app
+  #     - /app/node_modules
+
+  core_engine:
+    build: ./backend/core-engine
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend/core-engine:/var/www/html
+
+  db:
+    image: mysql:9
+    container_name: docker_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: community_mngnt_portal
+      MYSQL_DATABASE: community_mngnt_portal
+    ports:
+      - "3307:3306" # Safely offsets from your XAMPP port
