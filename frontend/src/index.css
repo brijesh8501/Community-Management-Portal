@@ -1,16 +1,402 @@
 /***********************************************
  * Global Styles
 /***********************************************/
-::root{
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-Bold.woff2') format('woff2'),
+        url('/fonts/Manrope-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
 
-    --primary-color: rgb(88, 98, 42);
-    --secondary-color: rgb(0, 58, 77);
-    --tertiary-color: #e9e9e5;
-    --silver-color: #f3f3f4;
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-ExtraBold.woff2') format('woff2'),
+        url('/fonts/Manrope-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-Light.woff2') format('woff2'),
+        url('/fonts/Manrope-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-ExtraLight.woff2') format('woff2'),
+        url('/fonts/Manrope-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-Medium.woff2') format('woff2'),
+        url('/fonts/Manrope-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-Regular.woff2') format('woff2'),
+        url('/fonts/Manrope-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-SemiBold.woff2') format('woff2'),
+        url('/fonts/Manrope-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+:root{
+
+    /*** Branding colors **/
+    --primary-color: 231, 29, 51; /*** Red Color **/
+    --secondary-color: 243, 234, 222; /*** Cream Color **/
+
+    /*** System common colors **/
+    --silver-color: 243, 243, 244; 
+    --gray-color: 147, 149, 152;
+    --black-color: 0, 0, 0;
 
 }
+/*** Branding colors for system -start **/
+.bg-primary{
+    background-color: rgb(var(--primary-color)) !important;
+}
+.text-primary{
+    color: rgb(var(--primary-color)) !important;
+}
+.bg-secondary{
+    background-color: rgb(var(--secondary-color)) !important;
+}
+.text-secondary{
+    color: rgb(var(--secondary-color)) !important;
+}
+/*** Branding colors for system -end **/
+/*** System common colors -start **/
+.bg-gray{
+    background-color: rgb(var(--gray-color)) !important;
+}
+.text-gray{
+    color: rgb(var(--gray-color)) !important;
+}
+.bg-silver{
+    background-color: rgb(var(--silver-color)) !important;
+}
+.text-silver{
+    color: rgb(var(--silver-color)) !important;
+}
+/*** System common colors -end **/
+/*** Font styles -start **/
+.f-manrope {
+    font-family: 'Manrope';
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: 'Manrope';
+    font-weight: 500;
+    font-style: normal;
+}
+.fw-500{
+    font-weight: 500;
+}
+/*** Font styles -end **/
+/*** Button styles -start **/
+.btn-primary{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: rgb(var(--primary-color));
+    --bs-btn-border-color: rgb(var(--primary-color));
+
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: rgb(var(--primary-color), 0.75);
+    --bs-btn-hover-border-color: rgb(var(--primary-color));
+
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: rgb(var(--primary-color), 0.75);
+    --bs-btn-active-border-color: rgb(var(--primary-color));
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(var(--primary-color), 0.125);
+
+    --bs-btn-disabled-color: rgb(var(--black-color));
+    --bs-btn-disabled-bg: rgb(var(--primary-color), 0.65);
+    --bs-btn-disabled-border-color: rgb(var(--primary-color), 0.65);
+
+    min-width: 200px;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    letter-spacing: 1.25px;
+}
+/*** Button styles -end **/
+/***********************************************
+ * Text Sizing
+***********************************************/
+.parent-container {
+  /* Tells CSS to track the width of this specific container */
+  container-type: inline-size; 
+}
+.scalable-text {
+  /* Scales the font to be exactly X% of the parent's width */
+    font-size: clamp(
+        var(--min-size, 24px), 
+        calc(var(--scale-factor, 6) * 1cqw), 
+        var(--max-size, 48px)
+    );
+}
+/* Width Classes -start */
 .w-xsm-100{
     width: 100%;
+}
+@media only screen and (min-width: 576px) {
+
+    .w-sm-95{
+        width: 95%;
+    }
+    .w-sm-90{
+        width: 90%;
+    }
+    .w-sm-85{
+        width: 85%;
+    }
+    .w-sm-80{
+        width: 80%;
+    }
+    .w-sm-75{
+        width: 75%;
+    }
+    .w-sm-70{
+        width: 70%;
+    }
+    .w-sm-65{
+        width: 65%;
+    }
+    .w-sm-60{
+        width: 60%;
+    }
+    .w-sm-55{
+        width: 55%;
+    }
+    .w-sm-50{
+        width: 50%;
+    }
+    .w-sm-45{
+        width: 45%;
+    }
+    .w-sm-40{
+        width: 40%;
+    }
+    .w-sm-35{
+        width: 35%;
+    }
+    .w-sm-30{
+        width: 30%;
+    }
+    .w-sm-20{
+        width: 20%;
+    }
+    .w-sm-15{
+        width: 15%;
+    }
+    .w-sm-10{
+        width: 10%;
+    }
+    .w-sm-5{
+        width: 5%;
+    }
+    
+}
+@media only screen and (min-width: 768px) {
+
+    .w-md-95{
+        width: 95%;
+    }
+    .w-md-90{
+        width: 90%;
+    }
+    .w-md-85{
+        width: 85%;
+    }
+    .w-md-80{
+        width: 80%;
+    }
+    .w-md-75{
+        width: 75%;
+    }
+    .w-md-70{
+        width: 70%;
+    }
+    .w-md-65{
+        width: 65%;
+    }
+    .w-md-60{
+        width: 60%;
+    }
+    .w-md-55{
+        width: 55%;
+    }
+    .w-md-50{
+        width: 50%;
+    }
+    .w-md-45{
+        width: 45%;
+    }
+    .w-md-40{
+        width: 40%;
+    }
+    .w-md-35{
+        width: 35%;
+    }
+    .w-md-30{
+        width: 30%;
+    }
+    .w-md-20{
+        width: 20%;
+    }
+    .w-md-15{
+        width: 15%;
+    }
+    .w-md-10{
+        width: 10%;
+    }
+    .w-md-5{
+        width: 5%;
+    }
+    
+}
+@media only screen and (min-width: 992px) {
+
+    .w-lg-95{
+        width: 95%;
+    }
+    .w-lg-90{
+        width: 90%;
+    }
+    .w-lg-85{
+        width: 85%;
+    }
+    .w-lg-80{
+        width: 80%;
+    }
+    .w-lg-75{
+        width: 75%;
+    }
+    .w-lg-70{
+        width: 70%;
+    }
+    .w-lg-65{
+        width: 65%;
+    }
+    .w-lg-60{
+        width: 60%;
+    }
+    .w-lg-55{
+        width: 55%;
+    }
+    .w-lg-50{
+        width: 50%;
+    }
+    .w-lg-45{
+        width: 45%;
+    }
+    .w-lg-40{
+        width: 40%;
+    }
+    .w-lg-35{
+        width: 35%;
+    }
+    .w-lg-30{
+        width: 30%;
+    }
+    .w-lg-20{
+        width: 20%;
+    }
+    .w-lg-15{
+        width: 15%;
+    }
+    .w-lg-10{
+        width: 10%;
+    }
+    .w-lg-5{
+        width: 5%;
+    }
+    
+}
+@media only screen and (min-width: 1200px) {
+
+    .w-xl-95{
+        width: 95%;
+    }
+    .w-xl-90{
+        width: 90%;
+    }
+    .w-xl-85{
+        width: 85%;
+    }
+    .w-xl-80{
+        width: 80%;
+    }
+    .w-xl-75{
+        width: 75%;
+    }
+    .w-xl-70{
+        width: 70%;
+    }
+    .w-xl-65{
+        width: 65%;
+    }
+    .w-xl-60{
+        width: 60%;
+    }
+    .w-xl-55{
+        width: 55%;
+    }
+    .w-xl-50{
+        width: 50%;
+    }
+    .w-xl-45{
+        width: 45%;
+    }
+    .w-xl-40{
+        width: 40%;
+    }
+    .w-xl-35{
+        width: 35%;
+    }
+    .w-xl-30{
+        width: 30%;
+    }
+    .w-xl-20{
+        width: 20%;
+    }
+    .w-xl-15{
+        width: 15%;
+    }
+    .w-xl-10{
+        width: 10%;
+    }
+    .w-xl-5{
+        width: 5%;
+    }
+    
 }
 @media only screen and (min-width: 1400px) {
 
@@ -70,239 +456,7 @@
     }
 
 }
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {
-
-    .w-xl-95{
-        width: 95%;
-    }
-    .w-xl-90{
-        width: 90%;
-    }
-    .w-xl-85{
-        width: 85%;
-    }
-    .w-xl-80{
-        width: 80%;
-    }
-    .w-xl-75{
-        width: 75%;
-    }
-    .w-xl-70{
-        width: 70%;
-    }
-    .w-xl-65{
-        width: 65%;
-    }
-    .w-xl-60{
-        width: 60%;
-    }
-    .w-xl-55{
-        width: 55%;
-    }
-    .w-xl-50{
-        width: 50%;
-    }
-    .w-xl-45{
-        width: 45%;
-    }
-    .w-xl-40{
-        width: 40%;
-    }
-    .w-xl-35{
-        width: 35%;
-    }
-    .w-xl-30{
-        width: 30%;
-    }
-    .w-xl-20{
-        width: 20%;
-    }
-    .w-xl-15{
-        width: 15%;
-    }
-    .w-xl-10{
-        width: 10%;
-    }
-    .w-xl-5{
-        width: 5%;
-    }
-    
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-
-    .w-lg-95{
-        width: 95%;
-    }
-    .w-lg-90{
-        width: 90%;
-    }
-    .w-lg-85{
-        width: 85%;
-    }
-    .w-lg-80{
-        width: 80%;
-    }
-    .w-lg-75{
-        width: 75%;
-    }
-    .w-lg-70{
-        width: 70%;
-    }
-    .w-lg-65{
-        width: 65%;
-    }
-    .w-lg-60{
-        width: 60%;
-    }
-    .w-lg-55{
-        width: 55%;
-    }
-    .w-lg-50{
-        width: 50%;
-    }
-    .w-lg-45{
-        width: 45%;
-    }
-    .w-lg-40{
-        width: 40%;
-    }
-    .w-lg-35{
-        width: 35%;
-    }
-    .w-lg-30{
-        width: 30%;
-    }
-    .w-lg-20{
-        width: 20%;
-    }
-    .w-lg-15{
-        width: 15%;
-    }
-    .w-lg-10{
-        width: 10%;
-    }
-    .w-lg-5{
-        width: 5%;
-    }
-    
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-
-    .w-md-95{
-        width: 95%;
-    }
-    .w-md-90{
-        width: 90%;
-    }
-    .w-md-85{
-        width: 85%;
-    }
-    .w-md-80{
-        width: 80%;
-    }
-    .w-md-75{
-        width: 75%;
-    }
-    .w-md-70{
-        width: 70%;
-    }
-    .w-md-65{
-        width: 65%;
-    }
-    .w-md-60{
-        width: 60%;
-    }
-    .w-md-55{
-        width: 55%;
-    }
-    .w-md-50{
-        width: 50%;
-    }
-    .w-md-45{
-        width: 45%;
-    }
-    .w-md-40{
-        width: 40%;
-    }
-    .w-md-35{
-        width: 35%;
-    }
-    .w-md-30{
-        width: 30%;
-    }
-    .w-md-20{
-        width: 20%;
-    }
-    .w-md-15{
-        width: 15%;
-    }
-    .w-md-10{
-        width: 10%;
-    }
-    .w-md-5{
-        width: 5%;
-    }
-    
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-
-    .w-sm-95{
-        width: 95%;
-    }
-    .w-sm-90{
-        width: 90%;
-    }
-    .w-sm-85{
-        width: 85%;
-    }
-    .w-sm-80{
-        width: 80%;
-    }
-    .w-sm-75{
-        width: 75%;
-    }
-    .w-sm-70{
-        width: 70%;
-    }
-    .w-sm-65{
-        width: 65%;
-    }
-    .w-sm-60{
-        width: 60%;
-    }
-    .w-sm-55{
-        width: 55%;
-    }
-    .w-sm-50{
-        width: 50%;
-    }
-    .w-sm-45{
-        width: 45%;
-    }
-    .w-sm-40{
-        width: 40%;
-    }
-    .w-sm-35{
-        width: 35%;
-    }
-    .w-sm-30{
-        width: 30%;
-    }
-    .w-sm-20{
-        width: 20%;
-    }
-    .w-sm-15{
-        width: 15%;
-    }
-    .w-sm-10{
-        width: 10%;
-    }
-    .w-sm-5{
-        width: 5%;
-    }
-    
-}
-
+/* Width Classes -end */
 /**************************************************************************
  * Navbar Styles
 ***************************************************************************/

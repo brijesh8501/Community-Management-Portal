@@ -1,10 +1,37 @@
 // Branding configuration for the application -start
+
+// Project and client names
+const whichProject = "RealSale";
+const whichClient = "Sunny Communities";
+
 export const BRANDING = {
-    projectName: "Community Portal",
-    clientName: "Cortel Group",
+    projectName: whichProject,
+    clientName: whichClient,
     tagline: "Connect, Share, Grow",
     logo: {
-        main: "/logo/Cortel-Group-with-text.png"
+        clientLogo: {
+            main: {
+                path: "/logo/builder-logo.png",
+                alt: `Builder logo of ${whichClient}`
+            }
+        },
+        featuredCommunityLogo: {
+            main: {
+                path: "/logo/featured-community-logo.png",
+                alt: `Featured Community logo of ${whichClient}`
+            }
+        },
+        systemLogo: {
+            main: {
+                path: "/logo/realsale-black-logo.png",
+                alt: `${whichProject} logo in black`
+            },
+            secondary: {
+                path: "/logo/realsale-white-logo.png",
+                alt: `${whichProject} logo in white`
+            }
+        }
+        
     },
     favicon: {
         main: "/icon/favicon.ico",

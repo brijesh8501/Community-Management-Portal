@@ -3,7 +3,7 @@ import { Outlet } from 'react-router';
 export function NonSessionLayout(){
 
     return (
-        <div className="bg-light min-vh-100">
+        <div>
 
             {/* The main content area where pages will be injected */}
             <main>
