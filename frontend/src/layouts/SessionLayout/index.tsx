@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 import { Navbar } from "../../components/Navbar";
 
-export function MainLayout(){
+export function SessionLayout(){
 
     return (
         <div className="bg-light min-vh-100">
